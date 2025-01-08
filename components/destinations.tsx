@@ -1,8 +1,7 @@
 "use client";
-
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { DestinationCard } from "./destination-card";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 const destinations = [
   {
@@ -30,36 +29,46 @@ const destinations = [
 
 export function Destinations() {
   return (
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-10">
-        <div className="flex justify-between items-center py-16">
-          <div className="space-y-4 font-circular">
-            <span className="text-customColors-pink text-[23px] leading-[27px] font-bold uppercase tracking-wider">
-              Top Destination
-            </span>
-            <h2 className="text-3xl md:text-[44px] leading-[52px] font-bold text-customColors-black-">
-              Explore top destination
-            </h2>
-          </div>
-
-          <div className="flex items-center gap-8">
-            <Button
-              variant="outline"
-              className="w-20 h-20 rounded-full hover:bg-gray-100 transition-colors"
-            >
-              <ArrowLeft className="w-6 h-6" />
-            </Button>
-            <Button className="w-20 h-20 rounded-full bg-customColors-purple text-white hover:bg-customColors-purple transition-colors">
-              <ArrowRight className="w-6 h-6" />
-            </Button>
-          </div>
+    <section className="max-w-7xl mx-auto px-4 lg:px-10">
+      <div className="flex flex-col lg:flex-row justify-between items-center py-4 md:py-16">
+        <div className="space-y-4 font-circular">
+          <span className="flex justify-center lg:justify-start text-customColors-pink text-[16px] leading-[19px] lg:text-[23px] lg:leading-[27px] font-bold uppercase tracking-wider">
+            Top Destination
+          </span>
+          <h2 className="text-[32px] leading-[38px] md:text-[44px] md:leading-[52px] font-bold text-customColors-black-">
+            Explore top destination
+          </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {destinations.map((destination, index) => (
-            <DestinationCard key={index} {...destination} />
-          ))}
+        <div className="flex items-center py-4 md:py-0 gap-60  md:gap-8">
+          <Button
+            variant="outline"
+            className="w-20 h-20 rounded-full hover:bg-gray-100 transition-colors"
+          >
+            <Image
+              src="/icons/arrowLeftIcon.svg"
+              alt="Arrow Left"
+              width={24}
+              height={24}
+              className="w-6 h-6"
+            />
+          </Button>
+          <Button className="w-20 h-20 rounded-full bg-customColors-purple text-white hover:bg-customColors-purple transition-colors shadow-gray-200 shadow-xl drop-shadow-lg">
+            <Image
+              src="/icons/arrowRightIcon.svg"
+              alt="Arrow Left"
+              width={24}
+              height={24}
+              className="w-6 h-6"
+            />
+          </Button>
         </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {destinations.map((destination, index) => (
+          <DestinationCard key={index} {...destination} />
+        ))}
       </div>
     </section>
   );

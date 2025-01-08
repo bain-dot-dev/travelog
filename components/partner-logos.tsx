@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function PartnerLogos() {
   return (
-    <div className="py-16">
+    <div className="pb-16 pt-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-wrap items-center justify-center gap-12 md:gap-[102px]">
           {[
@@ -26,7 +26,7 @@ export function PartnerLogos() {
               alt={partner.name}
               width={partner.width}
               height={40}
-              className="h-8 w-auto grayscale opacity-50 hover:opacity-70 transition-opacity"
+              className="h-8 w-auto text-customColors-black/50 hover:opacity-70 transition-opacity z-50"
             />
           ))}
         </div>

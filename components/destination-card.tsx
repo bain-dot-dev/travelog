@@ -18,8 +18,8 @@ export function DestinationCard({
   rating,
 }: DestinationCardProps) {
   return (
-    <Card className="bg-white border-none rounded-3xl shadow-sm drop-shadow-xl backdrop-blur-3xl backdrop-filter transition-shadow">
-      <CardHeader className="relative h-[350px] w-[377px] rounded-t-3xl">
+    <Card className="w-[398px] md:w-[278px] lg:w-[373px] bg-white border-none rounded-3xl shadow-sm drop-shadow-xl backdrop-blur-3xl backdrop-filter transition-shadow">
+      <CardHeader className="relative w-[398px] h-[314px] md:w-[278px] md:h-[314px] lg:w-[373px] lg:h-[350px] rounded-t-3xl">
         <Image src={image} alt={title} fill className="object-cover" />
       </CardHeader>
 
@@ -33,7 +33,7 @@ export function DestinationCard({
               {location}
             </p>
           </div>
-          <span className="text-customColors-pink font-bold text-[23px] font-circular leading-[27px]">
+          <span className="text-customColors-pink font-bold text-[23px] font-circular leading-[27px] pb-4">
             ${price.toFixed(2)}
           </span>
         </div>

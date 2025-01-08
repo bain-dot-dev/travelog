@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ServiceCard } from "./service-card";
 
 const services = [
@@ -14,7 +13,7 @@ const services = [
     icon: "/icons/scheduleIcon.svg",
   },
   {
-    title: "Best Tour Guide",
+    title: "Weather Forecast",
     description:
       "What looked like a small patch of purple grass, above five feet.",
     icon: "/icons/cloudyIcon.svg",
@@ -23,32 +22,28 @@ const services = [
 
 export function Services() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="absolute top-96 right-0 md:block hidden gap-6">
-        <Image
-          src="/icons/yellowOrb.svg"
-          alt="Yellow orb"
-          width={500}
-          height={500}
-          className="text-customColors-dandelion "
-        />
-      </div>
-      <div className="flex flex-col lg:grid lg:grid-cols-2 relative max-w-7xl mx-auto px-10">
-        <div className="w-[444px] py-16">
-          <div className="space-y-4 text-left mb-12">
-            <span className="text-customColors-pink text-[23px] font-circular leading-[27px] font-bold uppercase tracking-widest">
+    <section className="pt-8 lg:pt-16 md:py-24 pl-4 lg:pl-32 2xl:pl-64 relative xl:py-20">
+      {/* Content Section */}
+      <div className="flex flex-col lg:flex-row relative">
+        {/* Left Section */}
+        <div className=" w-auto py-8 lg:py-32 -pr-16">
+          <div className="space-y-4 text-left">
+            <span className="flex justify-center lg:justify-start text-customColors-pink text-[23px] font-circular leading-[27px] font-bold uppercase tracking-widest">
               Services
             </span>
-            <h2 className="text-3xl md:text-[44px] leading-[52px] font-circular font-bold text-customColors-black">
+            <h2 className="text-[32px] leading-[38px] md:text-[40px] md:leading-[48px] lg:text-[44px] lg:leading-[52px] text-center lg:text-start font-circular font-bold text-customColors-black">
               Our top value categories for you
             </h2>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-5 mx-auto overflow-hidden">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
+        {/* Scrollable Cards */}
+        <div className="overflow-hidden lg:overflow-x-auto no-scrollbar">
+          <div className="flex flex-col md:flex-row w-[398px] h-[869px] md:w-[869px] md:h-[443px] lg:w-[1092px] lg:h-[480px] gap-5">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

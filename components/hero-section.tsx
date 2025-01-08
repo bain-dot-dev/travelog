@@ -15,7 +15,7 @@ export function HeroSection() {
       </div>
 
       <div className="space-y-11 md:max-w-[896px] lg:max-w-[412px] px-auto lg:mx-0 text-center lg:text-left ">
-        <Button className="text-sm font-bold bg-white outline-customColors-white hover:bg-gray-100 rounded-full shadow-sm drop-shadow-sm">
+        <Button className="text-sm font-bold bg-white outline-customColors-white hover:bg-gray-100 rounded-full shadow-lg shadow-gray-200/50 drop-shadow-sm">
           <span className="text-customColors-pink text-md font-bold font-circular">
             Explore the world!
           </span>
@@ -42,7 +42,7 @@ export function HeroSection() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-          <Button className="w-full font-circular md:w-auto px-8 py-4 h-14 bg-customColors-purple text-white rounded-full hover:bg-customColors-purple font-bold shadow-md">
+          <Button className="w-full font-circular md:w-auto px-8 py-4 h-14 bg-customColors-purple text-white rounded-full hover:bg-customColors-purple font-bold shadow-xl shadow-gray-200 drop-shadow-md">
             Get Started
           </Button>
           <Button
