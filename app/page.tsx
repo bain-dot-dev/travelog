@@ -1,18 +1,19 @@
 import { Navbar } from "@/components/navbar";
-import { HeroSection } from "@/components/hero-section";
-import { PartnerLogos } from "@/components/partner-logos";
+import HeroSection from "@/app/hero-section/page";
+import PartnerLogos from "@/app/partner-logos/page";
 import Image from "next/image";
-import { Services } from "@/components/services";
-import { Destinations } from "@/components/destinations";
-import { TravelPoint } from "@/components/travel-point";
-import { Features } from "@/components/features";
-import TestimonialsSection from "@/components/testimonials";
-import Newsletter from "@/components/newsletter";
+import Services from "@/app/services/page";
+import Destinations from "@/app/destinations/page";
+import TravelPoint from "@/app/travel-point/page";
+import Features from "@/app/features/page";
+import TestimonialsSection from "@/app/testimonials/page";
+import Newsletter from "@/app/newsletter/page";
+import Footer from "@/app/footer/page";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <div className="absolute top-0 left-0 md:block hidden gap-6">
+      <div className="absolute top-0 left-0 lg:block hidden gap-6">
         <Image
           src="/icons/orangeOrb.svg"
           alt="Orange orb"
@@ -22,7 +23,7 @@ export default function Home() {
         />
       </div>
       {/* Orb Decoration */}
-      <div className="absolute top-96  right-0 md:block hidden gap-6">
+      <div className="absolute top-96  right-0 lg:block hidden gap-6">
         <Image
           src="/icons/yellowOrb.svg"
           alt="Yellow orb"
@@ -42,6 +43,7 @@ export default function Home() {
       <Features />
       <TestimonialsSection />
       <Newsletter />
+      <Footer />
     </div>
   );
 }

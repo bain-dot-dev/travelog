@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button } from "../../components/ui/button";
 
 interface Testimonial {
   name: string;
@@ -61,10 +61,10 @@ export default function TestimonialsSection() {
       </div>
       <div className="relative container mx-auto px-4">
         <div className="text-center space-y-4 mb-16">
-          <p className="text-customColors-pink text-[16px] leading-[19px] md:text-[23px] md:leading-[27px]  font-medium tracking-wide uppercase">
+          <p className="text-customColors-pink text-[16px] leading-[19px] lg:text-[23px] lg:leading-[27px]  font-medium tracking-wide uppercase">
             TESTIMONIALS
           </p>
-          <h2 className="text-[32px] leading-[38px] md:text-[40px] md:leading-[48px] lg:text-[44px] lg:leading-[52px] font-bold text-gray-900">
+          <h2 className="text-[32px] leading-[38px] lg:text-[40px] lg:leading-[48px] xl:text-[44px] xl:leading-[52px] font-bold text-gray-900">
             Trust our clients
           </h2>
         </div>
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
 
             <Button
               onClick={prevSlide}
-              className="absolute left-0 top-full lg:top-1/2  lg:-translate-y-1/2 lg:-translate-x-64 w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center z-10 hover:bg-gray-50 transition-colors"
+              className="absolute left-8 top-full xl:top-1/2  xl:-translate-y-1/2 xl:-translate-x-64 w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center z-10 hover:bg-gray-50 transition-colors"
               aria-label="Previous testimonial"
             >
               <Image
@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
             </Button>
             <Button
               onClick={nextSlide}
-              className="absolute right-0 top-full lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-64 w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center z-10 hover:bg-purple-700 transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
+              className="absolute right-8 top-full xl:top-1/2 xl:-translate-y-1/2 xl:translate-x-64 w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center z-10 hover:bg-purple-700 transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
               aria-label="Next testimonial"
             >
               <Image
@@ -136,7 +136,7 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-600 text-[18px] leading-[28px] lg:text-[23px] lg:leading-9 max-w-2xl pt-14">
+              <p className="text-gray-600 text-[18px] leading-[28px] xl:text-[23px] xl:leading-9 max-w-2xl pt-14">
                 {testimonials[currentSlide].content}
               </p>
             </div>

@@ -18,13 +18,13 @@ export function DestinationCard({
   rating,
 }: DestinationCardProps) {
   return (
-    <Card className="w-[398px] md:w-[278px] lg:w-[373px] bg-white border-none rounded-3xl shadow-sm drop-shadow-xl backdrop-blur-3xl backdrop-filter transition-shadow">
-      <CardHeader className="relative w-[398px] h-[314px] md:w-[278px] md:h-[314px] lg:w-[373px] lg:h-[350px] rounded-t-3xl">
-        <Image src={image} alt={title} fill className="object-cover" />
+    <Card className="w-[398px] lg:w-[278px] xl:w-[373px] bg-white border-none rounded-3xl shadow-sm drop-shadow-xl backdrop-blur-3xl backdrop-filter transition-shadow">
+      <CardHeader className="relative w-[398px] h-[314px] lg:w-[278px] lg:h-[314px] xl:w-[373px] xl:h-[350px] rounded-t-3xl">
+        <Image src={image} alt={title} fill className="object-cover rounded-t-3xl" />
       </CardHeader>
 
       <CardContent className="space-y-2 p-8">
-        <div className="flex flex-col-reverse lg:flex-row justify-between items-start">
+        <div className="flex flex-col-reverse xl:flex-row justify-between items-start">
           <div>
             <h3 className="font-bold text-[23px] font-circular leading-[27px] text-customColors-black">
               {title}
