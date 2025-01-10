@@ -30,7 +30,7 @@ const destinations = [
 export default function Destinations() {
   return (
     <section className="max-w-7xl mx-auto px-4 xl:px-10">
-      <div className="flex flex-col xl:flex-row justify-between items-center py-4 lg:py-0 lg:pt-16">
+      <div className="flex flex-col xl:flex-row justify-between items-center py-4 lg:py-0">
         <div className="space-y-4 font-circular">
           <span className="flex justify-center xl:justify-start text-customColors-pink text-[16px] leading-[19px] xl:text-[23px] xl:leading-[27px] font-bold uppercase tracking-wider">
             Top Destination

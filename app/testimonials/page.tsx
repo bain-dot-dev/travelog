@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative overflow-hidden py-4">
+    <section className="relative h-[850px] overflow-hidden py-4">
       <div className="absolute inset-0 -top-72">
         <Image src="/image/bgFluid.png" alt="Fluid" width={2506} height={958} />
       </div>
@@ -69,77 +69,75 @@ export default function TestimonialsSection() {
           </h2>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="relative">
-            {/* Navigation Buttons */}
+        <div className="relative  max-w-3xl mx-auto">
+          {/* Navigation Buttons */}
 
-            <Button
-              onClick={prevSlide}
-              className="absolute left-8 top-full xl:top-1/2  xl:-translate-y-1/2 xl:-translate-x-64 w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center z-10 hover:bg-gray-50 transition-colors"
-              aria-label="Previous testimonial"
-            >
-              <Image
-                src="/icons/arrowLeftIcon.svg"
-                alt="Arrow Left"
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-            </Button>
-            <Button
-              onClick={nextSlide}
-              className="absolute right-8 top-full xl:top-1/2 xl:-translate-y-1/2 xl:translate-x-64 w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center z-10 hover:bg-purple-700 transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
-              aria-label="Next testimonial"
-            >
-              <Image
-                src="/icons/arrowRightIcon.svg"
-                alt="Arrow Left"
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-            </Button>
+          <Button
+            onClick={prevSlide}
+            className="absolute left-8 top-full -translate-x-8 lg:top-1/2  lg:-translate-y-1/2 lg:-translate-x-28 xl:-translate-y-full xl:-translate-x-64 w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center z-10 hover:bg-gray-50 transition-colors"
+            aria-label="Previous testimonial"
+          >
+            <Image
+              src="/icons/arrowLeftIcon.svg"
+              alt="Arrow Left"
+              width={24}
+              height={24}
+              className="w-6 h-6"
+            />
+          </Button>
+          <Button
+            onClick={nextSlide}
+            className="absolute right-8 top-full translate-x-8 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-28 xl:-translate-y-full xl:translate-x-64 w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center z-10 hover:bg-purple-700 transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
+            aria-label="Next testimonial"
+          >
+            <Image
+              src="/icons/arrowRightIcon.svg"
+              alt="Arrow Left"
+              width={24}
+              height={24}
+              className="w-6 h-6"
+            />
+          </Button>
 
-            {/* Testimonial Content */}
-            <div className="text-center">
-              <div className="mb-8">
-                <div className="w-32 h-32 rounded-full bg-customColors-orange mx-auto mb-14 overflow-hidden">
-                  <Image
-                    src={testimonials[currentSlide].avatar}
-                    alt="Avatar"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-row items-center justify-center space-y-1">
-                  <h5 className="text-[28px] leading-[33px] font-circular font-semibold text-customColors-orange mr-2">
-                    {testimonials[currentSlide].name}
-                  </h5>
-                  <h6 className="text-gray-600 text-[24px] leading-[33px] font-circular font-semibold mr-2 rotate-12">
-                    /
-                  </h6>
-                  <h5 className="text-gray-600 text-[24px] leading-[27px] font-circular font-semibold">
-                    {testimonials[currentSlide].role}
-                  </h5>
-                </div>
+          {/* Testimonial Content */}
+          <div className="text-center">
+            <div className="mb-8">
+              <div className="w-32 h-32 rounded-full bg-customColors-orange mx-auto mb-14 overflow-hidden">
+                <Image
+                  src={testimonials[currentSlide].avatar}
+                  alt="Avatar"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              {/* Star Rating */}
-              <div className="flex justify-center gap-4 mb-6">
-                {[...Array(testimonials[currentSlide].rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-6 h-6 fill-yellow-400 text-yellow-400"
-                  />
-                ))}
+              <div className="flex flex-row items-center justify-center space-y-1">
+                <h5 className="text-[28px] leading-[33px] font-circular font-semibold text-customColors-orange mr-2">
+                  {testimonials[currentSlide].name}
+                </h5>
+                <h6 className="text-gray-600 text-[24px] leading-[33px] font-circular font-semibold mr-2 rotate-12">
+                  /
+                </h6>
+                <h5 className="text-gray-600 text-[24px] leading-[27px] font-circular font-semibold">
+                  {testimonials[currentSlide].role}
+                </h5>
               </div>
-
-              {/* Testimonial Text */}
-              <p className="text-gray-600 text-[18px] leading-[28px] xl:text-[23px] xl:leading-9 max-w-2xl pt-14">
-                {testimonials[currentSlide].content}
-              </p>
             </div>
+
+            {/* Star Rating */}
+            <div className="flex justify-center gap-4 mb-6">
+              {[...Array(testimonials[currentSlide].rating)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-6 h-6 fill-yellow-400 text-yellow-400"
+                />
+              ))}
+            </div>
+
+            {/* Testimonial Text */}
+            <p className="text-gray-600 text-[16px] leading-[25px] lg:text-[18px] lg:leading-[28px] xl:text-[23px] xl:leading-9 max-w-lg mx-auto pt-5">
+              {testimonials[currentSlide].content}
+            </p>
           </div>
 
           {/* Dots Navigation */}

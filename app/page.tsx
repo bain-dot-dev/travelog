@@ -22,7 +22,7 @@ export default function Home() {
           className="text-customColors-orange "
         />
       </div>
-      {/* Orb Decoration */}
+
       <div className="absolute top-96  right-0 lg:block hidden gap-6">
         <Image
           src="/icons/yellowOrb.svg"

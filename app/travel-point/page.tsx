@@ -10,13 +10,13 @@ const stats = [
 
 export default function TravelPoint() {
   return (
-    <section className="pt-32 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="travelpoint" className="pt-32 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 lg:px-20 xl:px-4">
         <div className="grid xl:grid-cols-2 lg:gap-20 xl:gap-80 items-center">
           {/* Left side with image and decorative elements */}
           <div className="relative w-[398px] h-[318px] lg:w-[871px] lg:h-[697px]">
             {/* Yellow background circle */}
-            <div className="absolute w-[398px] h-[318px] lg:w-[871px] lg:h-[697px] top-1/2 -left-0 lg:left-20 xl:-left-24 -translate-y-1/2 rounded-full">
+            <div className="absolute w-[398px] h-[318px] lg:w-[871px] lg:h-[697px] top-1/2 -left-0 lg:left-0 xl:-left-24 -translate-y-1/2 rounded-full">
               <Image
                 src="/image/happyWoman.png"
                 alt="Traveler with luggage"
@@ -30,15 +30,15 @@ export default function TravelPoint() {
           {/* Right side content */}
           <div className="relative">
             <div className="space-y-6 w-full">
-              <span className="flex justify-center xl:justify-start text-customColors-pink text-[16px] xl:text-[23px] xl:text-start font-circular leading-[19px] xl:leading-[27px] font-bold uppercase tracking-[4.6px]">
+              <span className="flex justify-center xl:justify-start text-customColors-pink text-[16px] lg:text-[23px] xl:text-start font-circular leading-[19px] lg:leading-[27px] font-bold uppercase tracking-[4.6px]">
                 Travel Point
               </span>
 
-              <h2 className="text-[32px] text-center xl:text-start lg:text-[44px] font-bold font-circular text-customColors-black leading-[38px] xl:leading-[53px]">
+              <h2 className="text-[32px] text-center xl:text-start lg:text-[40px] xl:text-[44px] font-bold font-circular text-customColors-black leading-[38px] lg:leading-[48px] xl:leading-[53px]">
                 We helping you find your dream location
               </h2>
 
-              <p className="text-customColors-black/50 text-[18px] text-center xl:text-start font-inter font-medium leading-[29px] xl:pr-8 xl:pt-4">
+              <p className="text-customColors-black/50 text-[18px] text-center xl:text-start font-inter font-medium leading-[29px] lg:pl-8 xl:pl-0 lg:pr-8 xl:pt-4">
                 Contrary to popular belief, Lorem Ipsum is not simply random
                 text. It has roots in a piece of classical Latin literature from
                 45 BC.

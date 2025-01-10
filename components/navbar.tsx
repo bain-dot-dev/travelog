@@ -44,25 +44,25 @@ export function Navbar() {
       <div className="hidden xl:flex items-center gap-8 xl:gap-16">
         <Link
           href="/"
-          className="text-sm 16px] font-bold text-customColors-black hover:text-customColors-black/50"
+          className="text-sm 16px] font-bold text-customColors-black/50 hover:text-customColors-black"
         >
           Home
         </Link>
         <Link
-          href="/discover"
-          className="text-sm leading-4 font-bold text-customColors-black hover:text-customColors-black/50"
+          href="#services"
+          className="text-sm leading-4 font-bold text-customColors-black/50 hover:text-customColors-black"
         >
           Discover
         </Link>
         <Link
-          href="/special-deals"
-          className="text-sm leading-4 font-bold text-customColors-black hover:text-customColors-black/50"
+          href="#travelpoint"
+          className="text-sm leading-4 font-bold text-customColors-black/50 hover:text-customColors-black"
         >
           Special Deals
         </Link>
         <Link
-          href="/contact"
-          className="text-sm leading-4 font-bold text-customColors-black hover:text-customColors-black/50"
+          href="#footer"
+          className="text-sm leading-4 font-bold text-customColors-black/50 hover:text-customColors-black"
         >
           Contact
         </Link>
@@ -83,16 +83,16 @@ export function Navbar() {
       <div className="flex items-center gap-2 lg:gap-4">
         {user ? (
           <Link href="/profile" passHref>
-            <Button className="text-sm leading-4 font-medium text-white px-4 lg:px-8 py-2 lg:py-4 h-10 lg:h-12 bg-customColors-purple hover:bg-customColors-pink rounded-full">
+            <Button className="text-sm leading-4 font-medium text-white px-4 lg:px-8 py-2 lg:py-4 h-10 lg:h-12 bg-customColors-purple hover:bg-customColors-purple rounded-full">
               Profile
             </Button>
           </Link>
         ) : (
           <>
             <Link href="/login" passHref>
-              <button className="hidden lg:block text-sm leading-4 font-bold px-4 py-2 hover:bg-gray-100 rounded-full">
+              <Button className="hidden lg:block text-sm leading-4 font-bold px-4 py-2 hover:bg-gray-100 rounded-full">
                 Log In
-              </button>
+              </Button>
             </Link>
             <Link href="/signup" passHref>
               <Button className="text-sm leading-4 font-medium text-white px-4 lg:px-8 py-2 lg:py-4 h-10 lg:h-12 bg-customColors-purple hover:bg-customColors-purple rounded-full">

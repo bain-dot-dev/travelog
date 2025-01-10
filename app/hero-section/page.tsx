@@ -3,7 +3,7 @@ import { Button } from "../../components/ui/button";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col-reverse xl:flex-col xl:grid xl:grid-cols-2 p-4 lg:p-6 xl:p-8 max-w-7xl mx-auto relative">
+    <section id="home" className="flex flex-col-reverse xl:flex-col xl:grid xl:grid-cols-2 p-4 lg:p-6 xl:p-8 max-w-7xl mx-auto relative">
       <div className="absolute -left-14 -bottom-36 hidden xl:flex flex-col  gap-6">
         <Image
           src="/icons/triangleSideIcon.svg"
@@ -151,6 +151,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

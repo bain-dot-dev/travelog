@@ -22,7 +22,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="pt-8 xl:pt-16 pl-4 lg:pl-0 xl:pl-32 relative lg:py-8 xl:py-20">
+    <section id="services" className="pt-8 xl:pt-16 pl-4 lg:pl-0 xl:pl-32 2xl:pl-0 relative lg:py-8 xl:py-20">
       {/* Content Section */}
       <div className="flex flex-col xl:flex-row 2xl:flex-col relative">
         {/* Left Section */}
@@ -39,7 +39,7 @@ export default function Services() {
 
         {/* Scrollable Cards */}
         <div className="flex lg:items-center lg:justify-center xl:items-start xl:justify-start 2xl:justify-center overflow-hidden xl:overflow-x-auto no-scrollbar mx-0 lg:px-16">
-          <div className="flex flex-col lg:flex-row w-[398px] h-[869px] lg:w-[869px] lg:h-[480px] xl:w-[1092px] xl:h-[480px] gap-5">
+          <div className="flex flex-col lg:flex-row w-[398px] h-[900px] lg:w-[869px] lg:h-[480px] xl:w-[1092px] xl:h-[480px] gap-5">
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
