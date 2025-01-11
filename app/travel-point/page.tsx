@@ -10,7 +10,7 @@ const stats = [
 
 export default function TravelPoint() {
   return (
-    <section id="travelpoint" className="pt-32 lg:py-24">
+    <section id="travelpoint" className="pt-16 lg:pt-24 lg:pb-8">
       <div className="max-w-7xl mx-auto px-4 lg:px-20 xl:px-4">
         <div className="grid xl:grid-cols-2 lg:gap-20 xl:gap-80 items-center">
           {/* Left side with image and decorative elements */}

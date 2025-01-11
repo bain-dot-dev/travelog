@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useAuth } from "@/hooks/useAuth";
-import { FirebaseError } from 'firebase/app';
+import { FirebaseError } from "firebase/app";
 
 export default function SignUpPage() {
   const [firstName, setFirstName] = useState("");
@@ -33,8 +33,8 @@ export default function SignUpPage() {
     setError("");
 
     const formData = new FormData(e.currentTarget);
-    const email = formData.get('email') as string;
-    const password = formData.get('password') as string;
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
@@ -42,13 +42,15 @@ export default function SignUpPage() {
     } catch (err) {
       if (err instanceof FirebaseError) {
         switch (err.code) {
-          case 'auth/email-already-in-use':
-            setError("This email is already in use. Please try a different email or log in.");
+          case "auth/email-already-in-use":
+            setError(
+              "This email is already in use. Please try a different email or log in."
+            );
             break;
-          case 'auth/invalid-email':
+          case "auth/invalid-email":
             setError("Invalid email address. Please check and try again.");
             break;
-          case 'auth/weak-password':
+          case "auth/weak-password":
             setError("Password is too weak. Please use a stronger password.");
             break;
           default:
@@ -70,30 +72,36 @@ export default function SignUpPage() {
     } catch (err) {
       if (err instanceof FirebaseError) {
         switch (err.code) {
-          case 'auth/popup-closed-by-user':
+          case "auth/popup-closed-by-user":
             setError("Google sign-up was cancelled. Please try again.");
             break;
-          case 'auth/popup-blocked':
-            setError("Pop-up was blocked by your browser. Please allow pop-ups for this site.");
+          case "auth/popup-blocked":
+            setError(
+              "Pop-up was blocked by your browser. Please allow pop-ups for this site."
+            );
             break;
-          case 'auth/account-exists-with-different-credential':
-            setError("An account already exists with the same email address but different sign-in credentials. Try signing in with a different method.");
+          case "auth/account-exists-with-different-credential":
+            setError(
+              "An account already exists with the same email address but different sign-in credentials. Try signing in with a different method."
+            );
             break;
           default:
             setError(`Failed to sign up with Google: ${err.message}`);
         }
       } else {
-        setError("An unexpected error occurred during Google sign-up. Please try again.");
+        setError(
+          "An unexpected error occurred during Google sign-up. Please try again."
+        );
       }
       console.error("Google signup error:", err);
     }
   };
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2">
+    <div className="min-h-screen grid lg:grid-cols-2 p-4 bg-[#F8F7FF]">
       {/* Left Section */}
-      <div className="relative hidden lg:block bg-[#F8F7FF]">
-        <div className="absolute top-8 left-10 z-50">
+      <div className="relative hidden lg:block">
+        <div className="absolute top-4 left-4 z-50">
           <Image
             src="/icons/travelogIcon.svg"
             alt="Travlog logo"
@@ -102,17 +110,17 @@ export default function SignUpPage() {
             className="rounded-lg w-8 h-8 lg:w-16 lg:h-16"
           />
         </div>
-        <div className="absolute inset-0 left-6 top-4  bg-cover bg-center">
+        <div className="relative bg-cover bg-center">
           <Image
             src="/image/santoriniStairs.png"
             alt="Black church in field"
             width={600}
             height={800}
-            className="rounded-xl w-[350px] h-[439px] lg:w-[693px] lg:h-[869px] xl:w-[800px] xl:h-[869px]"
+            className="rounded-xl min-h-screen w-full object-cover"
           />
         </div>
-        <div className="absolute bottom-5 left-10 right-40 text-[#2D2A3E] font-circular font-bold leading-8">
-          <h2 className="text-4xl font-light mb-4 ">
+        <div className="absolute bottom-4 left-4 right-40 text-[#2D2A3E] font-circular font-bold leading-8">
+          <h2 className="text-4xl font-light">
             Travlog
             <br />
             Explore the world

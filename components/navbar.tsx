@@ -18,7 +18,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between p-4 lg:p-6 xl:p-8 max-w-7xl mx-auto">
+    <nav className="flex flex-row-reverse lg:flex-row justify-between p-4 lg:px-16 lg:py-8 xl:p-8 max-w-7xl mx-auto">
       <div className="flex items-center gap-2 lg:gap-4">
         <Image
           src="/icons/travelogIcon.svg"
@@ -36,7 +36,7 @@ export function Navbar() {
             alt="Menu"
             width={40}
             height={40}
-            className="rounded-lg w-8 h-8 lg:w-10 lg:h-10"
+            className="rounded-lg w-8 h-8 lg:w-12 lg:h-12"
           />
         </Button>
       </div>
@@ -80,7 +80,7 @@ export function Navbar() {
         </span>
       </div>
 
-      <div className="flex items-center gap-2 lg:gap-4">
+      <div className="hidden lg:flex items-center gap-2 lg:gap-4 ">
         {user ? (
           <Link href="/profile" passHref>
             <Button className="text-sm leading-4 font-medium text-white px-4 lg:px-8 py-2 lg:py-4 h-10 lg:h-12 bg-customColors-purple hover:bg-customColors-purple rounded-full">
@@ -90,7 +90,7 @@ export function Navbar() {
         ) : (
           <>
             <Link href="/login" passHref>
-              <Button className="hidden lg:block text-sm leading-4 font-bold px-4 py-2 hover:bg-gray-100 rounded-full">
+              <Button className="text-sm leading-4 font-bold px-4 py-2 hover:bg-gray-100 rounded-full">
                 Log In
               </Button>
             </Link>

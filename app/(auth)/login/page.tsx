@@ -76,10 +76,9 @@ export default function LoginPage() {
 
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2">
-      {/* Left Section */}
-      <div className="relative hidden lg:block bg-[#F8F7FF]">
-        <div className="absolute top-8 left-10 z-50">
+    <div className="min-h-screen grid lg:grid-cols-2 p-4 bg-[#F8F7FF]">
+      <div className="relative hidden lg:block">
+        <div className="absolute top-4 left-4 z-50">
           <Image
             src="/icons/travelogIcon.svg"
             alt="Travlog logo"
@@ -88,17 +87,17 @@ export default function LoginPage() {
             className="rounded-lg w-8 h-8 lg:w-16 lg:h-16"
           />
         </div>
-        <div className="absolute inset-0 left-6 top-4 bg-cover bg-center">
-          <Image
-            src="/image/santoriniStairs.png"
-            alt="Santorini stairs"
-            width={600}
-            height={800}
-            className="rounded-xl w-[350px] h-[439px] lg:w-[693px] lg:h-[869px] xl:w-[800px] xl:h-[869px]"
-          />
-        </div>
-        <div className="absolute bottom-5 left-10 right-40 text-[#2D2A3E] font-circular font-bold leading-8">
-          <h2 className="text-4xl font-light mb-4">
+        <div className="relative bg-cover bg-center">
+              <Image
+                src="/image/santoriniStairs.png"
+                alt="Black church in field"
+                width={600}
+                height={800}
+                className="rounded-xl min-h-screen w-full object-cover"
+              />
+            </div>
+        <div className="absolute bottom-4 left-4 right-40 text-[#2D2A3E] font-circular font-bold leading-8">
+          <h2 className="text-4xl font-light">
             Travlog
             <br />
             Explore the world
@@ -106,7 +105,6 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right Section */}
       <div className="bg-[#F8F7FF] p-8 flex flex-col">
         <div className="lg:hidden mb-8">
           <Image

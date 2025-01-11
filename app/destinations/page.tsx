@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { DestinationCard } from "../../components/destination-card";
 import { Button } from "../../components/ui/button";
 import Image from "next/image";
@@ -25,9 +26,85 @@ const destinations = [
     price: 150.99,
     rating: 5.0,
   },
+  {
+    image: "/image/alpineLake.png",
+    title: "Alpine Lake Serenity",
+    location: "Switzerland",
+    price: 300.5,
+    rating: 4.9,
+  },
+  {
+    image: "/image/savannaWildlife.png",
+    title: "Savanna Wildlife Safari",
+    location: "Kenya",
+    price: 450.75,
+    rating: 4.7,
+  },
+  {
+    image: "/image/northernLights.png",
+    title: "Northern Lights Adventure",
+    location: "Iceland",
+    price: 600.25,
+    rating: 4.8,
+  },
+  {
+    image: "/image/hiddenWaterfall.png",
+    title: "Hidden Waterfall Haven",
+    location: "Bali, Indonesia",
+    price: 75.99,
+    rating: 4.6,
+  },
+  {
+    image: "/image/tropicalLagoon.png",
+    title: "Tropical Lagoon Escape",
+    location: "Phuket, Thailand",
+    price: 95.25,
+    rating: 4.4,
+  },
+  {
+    image: "/image/sunsetDunes.png",
+    title: "Sunset Over Golden Dunes",
+    location: "Sahara Desert, Morocco",
+    price: 250.5,
+    rating: 4.7,
+  },
+  {
+    image: "/image/fjordCruise.png",
+    title: "Fjord Cruise Adventure",
+    location: "Norway",
+    price: 350.99,
+    rating: 4.9,
+  },
+  {
+    image: "/image/coralReefDiving.png",
+    title: "Coral Reef Diving Experience",
+    location: "Great Barrier Reef, Australia",
+    price: 500.0,
+    rating: 4.8,
+  },
+  {
+    image: "/image/arcticExpedition.png",
+    title: "Arctic Expedition Journey",
+    location: "Greenland",
+    price: 700.75,
+    rating: 5.0,
+  },
 ];
 
 export default function Destinations() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 3 >= destinations.length ? 0 : prevIndex + 3
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex - 3 < 0 ? Math.max(destinations.length - 3, 0) : prevIndex - 3
+    );
+  };
   return (
     <section className="max-w-7xl mx-auto px-4 xl:px-10">
       <div className="flex flex-col xl:flex-row justify-between items-center py-4 lg:py-0">
@@ -43,32 +120,38 @@ export default function Destinations() {
         <div className="flex items-center py-4 lg:py-16 gap-60  lg:gap-8">
           <Button
             variant="outline"
-            className="w-20 h-20 rounded-full hover:bg-gray-100 transition-colors"
+            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] rounded-full hover:bg-gray-100 transition-colors"
+            onClick={prevSlide}
           >
             <Image
               src="/icons/arrowLeftIcon.svg"
               alt="Arrow Left"
               width={24}
               height={24}
-              className="w-6 h-6"
+              className="w-4 h-4 lg:w-6 lg:h-6"
             />
           </Button>
-          <Button className="w-20 h-20 rounded-full bg-customColors-purple text-white hover:bg-customColors-purple transition-colors shadow-gray-200 shadow-xl drop-shadow-lg">
+          <Button
+            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] rounded-full bg-customColors-purple text-white hover:bg-customColors-purple transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
+            onClick={nextSlide}
+          >
             <Image
               src="/icons/arrowRightIcon.svg"
               alt="Arrow Left"
               width={24}
               height={24}
-              className="w-6 h-6"
+              className="w-4 h-4 lg:w-6 lg:h-6"
             />
           </Button>
         </div>
       </div>
 
       <div className="flex flex-col lg:flex-row justify-center gap-8">
-        {destinations.map((destination, index) => (
-          <DestinationCard key={index} {...destination} />
-        ))}
+        {destinations
+          .slice(currentIndex, currentIndex + 3)
+          .map((destination, index) => (
+            <DestinationCard key={currentIndex + index} {...destination} />
+          ))}
       </div>
     </section>
   );

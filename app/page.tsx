@@ -13,7 +13,7 @@ import Footer from "@/app/footer/page";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <div className="absolute top-0 left-0 lg:block hidden gap-6">
+      <div className="absolute top-0 left-0 xl:hidden lg:block hidden">
         <Image
           src="/icons/orangeOrb.svg"
           alt="Orange orb"
@@ -22,19 +22,17 @@ export default function Home() {
           className="text-customColors-orange "
         />
       </div>
-
-      <div className="absolute top-96  right-0 lg:block hidden gap-6">
-        <Image
-          src="/icons/yellowOrb.svg"
-          alt="Yellow orb"
-          width={500}
-          height={500}
-          className="text-customColors-dandelion"
-        />
-      </div>
       <Navbar />
       <main className="py-16">
         <HeroSection />
+        <div className="absolute lg:top-[1020px] right-0 xl:hidden lg:block hidden">
+          <Image
+            src="/icons/yellowOrb.svg"
+            alt="Yellow orb"
+            width={500}
+            height={500}
+          />
+        </div>
       </main>
       <PartnerLogos />
       <Services />

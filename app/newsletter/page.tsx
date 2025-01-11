@@ -53,7 +53,7 @@ export default function Newsletter() {
   };
 
   return (
-    <div className="min-h-[600px] w-full py-12 lg:px-16 xl:px-0 lg:py-16">
+    <div className="relative min-h-[600px] w-full pb-12 xl:pt-0 lg:px-16 xl:px-0 lg:py-16">
       <div className="relative flex items-center justify-center w-[398px] h-[547px] lg:h-[572px] xl:h-[608px] lg:w-[897px] xl:w-[1184px] mx-auto bg-[#FFFBF1] rounded-[32px]">
         <div className="absolute -top-17 -left-8 w-46 h-44 hidden lg:block">
           <Image
@@ -68,7 +68,7 @@ export default function Newsletter() {
             onSubmit={handleSubscribe}
             className="max-w-5xl text-center space-y-8 pt-8"
           >
-            <p className="text-customColors-pink text-[16px] leading-[19px] lg:text-[23px] lg:leading-[27px] font-medium tracking-wide uppercase px-8">
+            <p className="text-customColors-pink text-[16px] leading-[19px] font-circular lg:text-[23px] lg:leading-[27px] font-bold tracking-widest uppercase px-8">
               Subscribe to our newsletter
             </p>
             <h2 className="text-[32px] leading-[38px] lg:text-[40px] lg:leading-[48px] xl:text-[55px] xl:leading-[66px] font-circular font-bold text-customColors-black">

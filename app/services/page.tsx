@@ -22,10 +22,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="pt-8 xl:pt-16 pl-4 lg:pl-0 xl:pl-32 2xl:pl-0 relative lg:py-8 xl:py-20">
-      {/* Content Section */}
+    <section
+      id="services"
+      className="pt-8 xl:pt-16 pl-4 lg:pl-0 xl:pl-32 2xl:pl-0 relative lg:py-8 xl:py-20"
+    >
       <div className="flex flex-col xl:flex-row 2xl:flex-col relative">
-        {/* Left Section */}
         <div className=" w-auto py-8 xl:py-32 -pr-16">
           <div className="space-y-4 text-left">
             <span className="flex justify-center xl:justify-start 2xl:justify-center text-customColors-pink text-[23px] font-circular leading-[27px] font-bold uppercase tracking-widest">

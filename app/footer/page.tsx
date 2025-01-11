@@ -33,6 +33,14 @@ const footerData = [
 export default function Footer() {
   return (
     <footer id="footer" className="relative w-full bg-white mx-auto px-4 lg:px-16 xl:px-32 py-12 lg:py-16">
+      <div className="absolute lg:-top-10 xl:-top-48 right-0 lg:w-24 xl:w-28 h-44 hidden lg:block">
+                <Image
+                  src="/icons/wavyLine.svg"
+                  alt="Leaf Icon"
+                  width={332}
+                  height={351}
+                />
+              </div>
       <div className="container mx-auto 2xl:px-11 max-w-7xl">
         <div className="flex flex-col xl:flex-row justify-between gap-8 lg:gap-16 xl:gap-16">
           <div className="space-y-8 font-circular xl:w-[560px] xl:h-[183px]">
@@ -44,7 +52,7 @@ export default function Footer() {
                 height={40}
                 className="rounded-lg w-10 h-10 lg:w-8 lg:h-8"
               />
-              <span className="text-2xl text-customColors-black font-bold leading-10 ">
+              <span className="text-2xl text-customColors-black font-black font-circular leading-10 ">
                 Travlog
               </span>
             </div>
