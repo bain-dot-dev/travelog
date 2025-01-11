@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../../components/ui/button";
 
 export default function HeroSection() {
   return (
     <section
       id="home"
-      className="flex flex-col-reverse xl:flex-col xl:grid xl:grid-cols-2 p-4 lg:p-6 xl:p-8 max-w-7xl mx-auto relative "
+      className="flex flex-col-reverse xl:flex-col xl:grid xl:grid-cols-2 p-4 pt-8 lg:p-6 xl:p-8 max-w-7xl mx-auto relative "
     >
       <div className="absolute -left-14 -bottom-36 hidden xl:flex flex-col  gap-6">
         <Image
@@ -17,7 +17,7 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="space-y-6 lg:space-y-11 lg:max-w-[896px] xl:max-w-[412px] mx-auto xl:mx-0 text-center xl:text-left pt-12 lg:pt-50 xl:pt-0">
+      <div className="space-y-6 lg:space-y-11 lg:max-w-[896px] xl:max-w-[412px] mx-auto xl:mx-0 text-center xl:text-left pt-10 lg:pt-28 xl:pt-0">
         <Button className="text-sm font-bold bg-white outline-customColors-white hover:bg-gray-100 rounded-full shadow-lg shadow-gray-200/50 drop-shadow-sm">
           <span className="text-customColors-pink text-md font-bold font-circular">
             Explore the world!
@@ -30,7 +30,7 @@ export default function HeroSection() {
             className="ml-2"
           />
         </Button>
-        <div className="w-full max-w-4xl mx-auto px-4">
+        <div className="w-full max-w-4xl mx-auto px-4 lg:px-32">
           <h1 className="text-4xl lg:text-[56px] xl:text-[69px] font-bold font-circular leading-[48px] lg:leading-[67px] xl:leading-[82px]">
             Travel{" "}
             <span className="text-customColors-pink leading-[48px] lg:leading-[67px] xl:leading-[82px]">
@@ -64,9 +64,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="relative lg:h-[713px] -mt-56 lg:-mt-40 xl:-mt-12 w-full pt-16 lg:pt-16 xl:pt-0">
+      <div className="relative h-[366px] lg:h-[713px] w-full pt-16 xl:pt-0">
         <div className="absolute inset-0 z-0 w-full">
-          <div className="absolute inset-0 z-0 lg:w-[772px] lg:h-[287px] h-full lg:left-24 lg:top-32 xl:-left-40 xl:top-0">
+          <div className="absolute inset-0 z-0 w-[396px] h-[147px] lg:w-[772px] lg:h-[287px] lg:left-24  lg:top-12 xl:-left-40 xl:top-0">
             <Image
               src="/icons/globeIcon.svg"
               alt="Globe"
@@ -80,16 +80,16 @@ export default function HeroSection() {
           <div className="grid relative z-30">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="relative">
-                <div className="relative w-[139px] h-[154px] lg:w-[272px] lg:h-[300px] left-10 lg:left-64 top-38 lg:top-16 xl:-left-2 xl:top-0">
+                <div className="relative w-[139px] h-[154px] lg:w-[272px] lg:h-[300px] left-12 lg:left-64 -top-10 lg:-top-4 xl:-left-2 xl:top-0">
                   <Image
                     src="/image/santoriniView.png"
                     alt="Santorini view"
                     width={272}
                     height={300}
-                    className="object-cover rounded-[32px]"
+                    className="object-cover rounded-2xl lg:rounded-[32px]"
                   />
                 </div>
-                <div className="absolute transform -translate-x-1/2 left-12 lg:left-64 xl:-left-3 lg:top-90 xl:top-72 top-[300px] -translate-y-1/2">
+                <div className="absolute transform -translate-x-1/2 left-12 top-28 lg:left-64 xl:-left-3 lg:top-70 xl:top-72 -translate-y-1/2">
                   <div className="bg-customColors-pink h-8 w-8 lg:h-16 lg:w-16 rounded-full p-2 lg:p-4 shadow-2xl drop-shadow-2xl">
                     <Image
                       src="/icons/paperPlaneIcon.svg"
@@ -102,7 +102,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <div className="relative w-[300px] lg:w-[400px] xl:w-[500px] mt-8 lg:mt-44 xl:mt-28 left-29 lg:-left-2 xl:-left-34">
+              <div className="relative w-[220px] lg:w-[400px] xl:w-[500px] -mt-41 lg:mt-24 xl:mt-28 left-40 lg:-left-2 xl:-left-34">
                 <div className="relative w-[139px] h-[205px] lg:w-[272px] lg:h-[300px] mx-auto">
                   <Image
                     src="/image/cityView.png"
@@ -112,7 +112,7 @@ export default function HeroSection() {
                     className="object-cover rounded-[32px]"
                   />
                 </div>
-                <div className="absolute right-8 lg:-right-7 xl:right-5 top-38 lg:top-74 xl:top-74 bg-white rounded-full py-4 px-4 lg:px-8 h-7 lg:h-14 backdrop-blur-2xl backdrop-filter shadow-sm drop-shadow-2xl flex items-center gap-2">
+                <div className="absolute -right-2 lg:-right-7 xl:right-5 top-38 lg:top-74 xl:top-74 bg-white rounded-full py-4 px-4 lg:px-8 h-7 lg:h-14 backdrop-blur-2xl backdrop-filter shadow-sm drop-shadow-2xl flex items-center gap-2">
                   <div className="flex items-center space-x-2">
                     <Image
                       src="/icons/mapPinIcon.svg"

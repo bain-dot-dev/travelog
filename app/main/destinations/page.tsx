@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { DestinationCard } from "../../components/destination-card";
-import { Button } from "../../components/ui/button";
+import { DestinationCard } from "../../../components/destination-card";
+import { Button } from "../../../components/ui/button";
 import Image from "next/image";
 
 const destinations = [
@@ -120,7 +120,7 @@ export default function Destinations() {
         <div className="flex items-center py-4 lg:py-16 gap-60  lg:gap-8">
           <Button
             variant="outline"
-            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] rounded-full hover:bg-gray-100 transition-colors"
+            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] rounded-full hover:bg-white transition-colors shadow-lg border shadow-gray-200/50 hover:drop-shadow-2xl backdrop-blur-2xl backdrop-filter"
             onClick={prevSlide}
           >
             <Image
@@ -132,7 +132,7 @@ export default function Destinations() {
             />
           </Button>
           <Button
-            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] rounded-full bg-customColors-purple text-white hover:bg-customColors-purple transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
+            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] rounded-full bg-customColors-purple text-white hover:bg-customColors-purple transition-colors shadow-lg border shadow-gray-200/50 hover:drop-shadow-2xl backdrop-blur-2xl backdrop-filter"
             onClick={nextSlide}
           >
             <Image

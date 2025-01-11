@@ -1,4 +1,4 @@
-import { ServiceCard } from "../../components/service-card";
+import { ServiceCard } from "../../../components/service-card";
 
 const services = [
   {
@@ -38,9 +38,8 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Scrollable Cards */}
         <div className="flex lg:items-center lg:justify-center xl:items-start xl:justify-start 2xl:justify-center overflow-hidden xl:overflow-x-auto no-scrollbar mx-0 lg:px-16">
-          <div className="flex flex-col lg:flex-row w-[398px] h-[900px] lg:w-[869px] lg:h-[480px] xl:w-[1092px] xl:h-[480px] gap-5">
+          <div className="flex flex-col lg:flex-row w-[398px] h-[900px] lg:w-[869px] lg:h-[520px] xl:w-[1092px] xl:h-[480px] gap-5">
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}

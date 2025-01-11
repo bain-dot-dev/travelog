@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../../components/ui/button";
 
 interface Testimonial {
   name: string;
@@ -55,18 +55,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative h-[800px] lg:h-[750px] xl:h-[1000px] py-4">
-      <div className="absolute inset-0 -top-56 hidden xl:block">
-        <Image src="/image/bgFluid.png" alt="Fluid" width={2506} height={958} />
-      </div>
-      <div className="absolute inset-0 -top-102 hidden lg:block xl:hidden">
-        <Image
-          src="/image/bgFluid2.png"
-          alt="Fluid"
-          width={2506}
-          height={958}
-        />
-      </div>
+    <section className="relative h-[810px] lg:h-[750px] xl:h-[1000px] py-4">
       <div className="relative container mx-auto lg:pt-0 xl:pt-32 px-4">
         <div className="text-center space-y-4 mb-16">
           <p className="text-customColors-pink text-[16px] leading-[19px] lg:text-[23px] lg:leading-[27px]  font-medium tracking-wide uppercase">
@@ -104,36 +93,6 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="relative  max-w-3xl mx-auto">
-          {/* Navigation Buttons */}
-
-          {/* <Button
-            onClick={prevSlide}
-            className="absolute left-10 top-full -translate-x-8 lg:top-1/2  lg:-translate-y-1/2 lg:-translate-x-28 xl:-translate-y-full xl:-translate-x-64 w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center z-10 hover:bg-gray-50 transition-colors"
-            aria-label="Previous testimonial"
-          >
-            <Image
-              src="/icons/arrowLeftIcon.svg"
-              alt="Arrow Left"
-              width={24}
-              height={24}
-              className="w-6 h-6"
-            />
-          </Button>
-          <Button
-            onClick={nextSlide}
-            className="absolute right-10 top-full translate-x-8 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-28 xl:-translate-y-full xl:translate-x-64 w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center z-10 hover:bg-purple-700 transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
-            aria-label="Next testimonial"
-          >
-            <Image
-              src="/icons/arrowRightIcon.svg"
-              alt="Arrow Left"
-              width={24}
-              height={24}
-              className="w-6 h-6"
-            />
-          </Button> */}
-
-          {/* Testimonial Content */}
           <div className="text-center">
             <div className="mb-8">
               <div className="w-32 h-32 rounded-full bg-customColors-orange mx-auto mb-14 overflow-hidden">
@@ -158,7 +117,6 @@ export default function TestimonialsSection() {
               </div>
             </div>
 
-            {/* Star Rating */}
             <div className="flex justify-center gap-4 mb-6">
               {[...Array(testimonials[currentSlide].rating)].map((_, i) => (
                 <Star
@@ -168,13 +126,11 @@ export default function TestimonialsSection() {
               ))}
             </div>
 
-            {/* Testimonial Text */}
             <p className="text-gray-600 text-[16px] leading-[25px] lg:text-[18px] lg:leading-[28px] xl:text-[23px] xl:leading-9 max-w-lg mx-auto pt-5">
               {testimonials[currentSlide].content}
             </p>
           </div>
 
-          {/* Dots Navigation */}
           <div className="flex justify-center gap-6 py-16">
             {testimonials.map((_, index) => (
               <button

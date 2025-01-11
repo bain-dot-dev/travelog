@@ -32,7 +32,7 @@ const footerData = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="relative w-full bg-white mx-auto px-4 lg:px-16 xl:px-32 py-12 lg:py-16">
+    <footer id="footer" className="relative w-full bg-white mx-auto px-4 lg:px-16 xl:px-32 py-4 lg:py-16">
       <div className="absolute lg:-top-10 xl:-top-48 right-0 lg:w-24 xl:w-28 h-44 hidden lg:block">
                 <Image
                   src="/icons/wavyLine.svg"

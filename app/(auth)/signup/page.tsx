@@ -32,13 +32,9 @@ export default function SignUpPage() {
     e.preventDefault();
     setError("");
 
-    const formData = new FormData(e.currentTarget);
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      router.push("/profile");
+      router.push("/");
     } catch (err) {
       if (err instanceof FirebaseError) {
         switch (err.code) {
@@ -61,6 +57,9 @@ export default function SignUpPage() {
       }
       console.error("Signup error:", err);
     }
+
+    console.log("Email:", email);
+    console.log("Password:", password);
   };
 
   const handleGoogleSignUp = async () => {
@@ -98,9 +97,8 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2 p-4 bg-[#F8F7FF]">
-      {/* Left Section */}
-      <div className="relative hidden lg:block">
+    <div className="h-screen grid lg:grid-cols-2 overflow-hidden p-4 bg-[#F8F7FF]">
+      <div className="relative hidden lg:block h-full">
         <div className="absolute top-4 left-4 z-50">
           <Image
             src="/icons/travelogIcon.svg"
@@ -110,13 +108,13 @@ export default function SignUpPage() {
             className="rounded-lg w-8 h-8 lg:w-16 lg:h-16"
           />
         </div>
-        <div className="relative bg-cover bg-center">
+        <div className="relative h-full bg-cover bg-center">
           <Image
             src="/image/santoriniStairs.png"
             alt="Black church in field"
             width={600}
             height={800}
-            className="rounded-xl min-h-screen w-full object-cover"
+            className="rounded-xl h-full w-full object-cover"
           />
         </div>
         <div className="absolute bottom-4 left-4 right-40 text-[#2D2A3E] font-circular font-bold leading-8">
@@ -128,7 +126,6 @@ export default function SignUpPage() {
         </div>
       </div>
 
-      {/* Right Section */}
       <div className="bg-[#F8F7FF] p-8 flex flex-col">
         <div className="lg:hidden mb-8">
           <Image
@@ -201,7 +198,7 @@ export default function SignUpPage() {
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       required
-                      className="bg-[#FFFFFF] border-[#E0E0E0] text-white placeholder:text-[#6B6885] h-12"
+                      className="bg-[#FFFFFF] border-[#E0E0E0] text-[#2D2A3E] placeholder:text-[#6B6885] h-12"
                     />
                   </div>
                   <div>
@@ -210,7 +207,7 @@ export default function SignUpPage() {
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                       required
-                      className="bg-[#FFFFFF] border-[#E0E0E0] text-white placeholder:text-[#6B6885] h-12"
+                      className="bg-[#FFFFFF] border-[#E0E0E0] text-[#2D2A3E] placeholder:text-[#6B6885] h-12"
                     />
                   </div>
                 </div>
@@ -222,7 +219,7 @@ export default function SignUpPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="bg-[#FFFFFF] border-[#E0E0E0] text-white placeholder:text-[#6B6885] h-12"
+                    className="bg-[#FFFFFF] border-[#E0E0E0] text-[#2D2A3E] placeholder:text-[#6B6885] h-12"
                   />
                 </div>
 
@@ -233,7 +230,7 @@ export default function SignUpPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="bg-[#FFFFFF] border-[#E0E0E0] text-white placeholder:text-[#6B6885] h-12 pr-10"
+                    className="bg-[#FFFFFF] border-[#E0E0E0] text-[#2D2A3E] placeholder:text-[#6B6885] h-12 pr-10"
                   />
                   <button
                     type="button"

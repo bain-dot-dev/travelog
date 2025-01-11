@@ -7,9 +7,9 @@ import { auth, googleProvider } from "@/lib/firebase";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { AlertCircle, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { AlertCircle, ArrowRight, Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
-import { FirebaseError } from 'firebase/app';
+import { FirebaseError } from "firebase/app";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -22,21 +22,17 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
 
-    const formData = new FormData(e.currentTarget);
-    const email = formData.get('email') as string;
-    const password = formData.get('password') as string;
-
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/");
     } catch (err) {
       if (err instanceof FirebaseError) {
         switch (err.code) {
-          case 'auth/user-not-found':
-          case 'auth/wrong-password':
+          case "auth/user-not-found":
+          case "auth/wrong-password":
             setError("Invalid email or password. Please try again.");
             break;
-          case 'auth/too-many-requests':
+          case "auth/too-many-requests":
             setError("Too many failed login attempts. Please try again later.");
             break;
           default:
@@ -58,27 +54,30 @@ export default function LoginPage() {
     } catch (err) {
       if (err instanceof FirebaseError) {
         switch (err.code) {
-          case 'auth/popup-closed-by-user':
+          case "auth/popup-closed-by-user":
             setError("Google sign-in was cancelled. Please try again.");
             break;
-          case 'auth/popup-blocked':
-            setError("Pop-up was blocked by your browser. Please allow pop-ups for this site.");
+          case "auth/popup-blocked":
+            setError(
+              "Pop-up was blocked by your browser. Please allow pop-ups for this site."
+            );
             break;
           default:
             setError(`Failed to log in with Google: ${err.message}`);
         }
       } else {
-        setError("An unexpected error occurred during Google sign-in. Please try again.");
+        setError(
+          "An unexpected error occurred during Google sign-in. Please try again."
+        );
       }
       console.error("Google login error:", err);
     }
   };
 
-
   return (
-    <div className="min-h-screen grid lg:grid-cols-2 p-4 bg-[#F8F7FF]">
-      <div className="relative hidden lg:block">
-        <div className="absolute top-4 left-4 z-50">
+    <div className="h-screen grid lg:grid-cols-2 overflow-hidden p-4 bg-[#F8F7FF]">
+      <div className="relative hidden lg:block h-full">
+        <div className="absolute top-5 left-5 z-50">
           <Image
             src="/icons/travelogIcon.svg"
             alt="Travlog logo"
@@ -87,16 +86,16 @@ export default function LoginPage() {
             className="rounded-lg w-8 h-8 lg:w-16 lg:h-16"
           />
         </div>
-        <div className="relative bg-cover bg-center">
-              <Image
-                src="/image/santoriniStairs.png"
-                alt="Black church in field"
-                width={600}
-                height={800}
-                className="rounded-xl min-h-screen w-full object-cover"
-              />
-            </div>
-        <div className="absolute bottom-4 left-4 right-40 text-[#2D2A3E] font-circular font-bold leading-8">
+        <div className="relative h-full bg-cover bg-center">
+          <Image
+            src="/image/santoriniStairs.png"
+            alt="Black church in field"
+            width={600}
+            height={800}
+            className="rounded-xl h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute bottom-5 left-5 right-40 text-[#2D2A3E] font-circular font-bold leading-8">
           <h2 className="text-4xl font-light">
             Travlog
             <br />
@@ -105,7 +104,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <div className="bg-[#F8F7FF] p-8 flex flex-col">
+      <div className="bg-[#F8F7FF] p-8 flex flex-col h-full">
         <div className="lg:hidden mb-8">
           <Image
             src="/icons/travelogIcon.svg"
@@ -139,7 +138,7 @@ export default function LoginPage() {
               className="text-[#8D7FFF] hover:text-[#9F94FF]"
             >
               Sign up
-          </Link>
+            </Link>
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -222,4 +221,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
