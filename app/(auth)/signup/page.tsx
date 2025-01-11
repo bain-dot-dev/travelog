@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, googleProvider } from "@/lib/firebase";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   AlertCircle,
   CheckCircle2,
@@ -17,6 +16,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useAuth } from "@/hooks/useAuth";
+import { FirebaseError } from 'firebase/app';
 
 export default function SignUpPage() {
   const [firstName, setFirstName] = useState("");
@@ -24,25 +24,40 @@ export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
-  const { signUp, verificationSent, resendVerificationEmail } = useAuth();
+  const { verificationSent, resendVerificationEmail } = useAuth();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
 
-    if (!agreedToTerms) {
-      setError("Please agree to the Terms & Conditions");
-      return;
-    }
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
 
     try {
-      await signUp(email, password);
-      // Don't redirect immediately, show verification message
-    } catch (err: any) {
-      setError(err.message || "Failed to create an account. Please try again.");
+      await createUserWithEmailAndPassword(auth, email, password);
+      router.push("/profile");
+    } catch (err) {
+      if (err instanceof FirebaseError) {
+        switch (err.code) {
+          case 'auth/email-already-in-use':
+            setError("This email is already in use. Please try a different email or log in.");
+            break;
+          case 'auth/invalid-email':
+            setError("Invalid email address. Please check and try again.");
+            break;
+          case 'auth/weak-password':
+            setError("Password is too weak. Please use a stronger password.");
+            break;
+          default:
+            setError(`Failed to create an account: ${err.message}`);
+        }
+      } else {
+        setError("An unexpected error occurred. Please try again.");
+      }
+      console.error("Signup error:", err);
     }
   };
 
@@ -53,7 +68,24 @@ export default function SignUpPage() {
       await signInWithPopup(auth, googleProvider);
       router.push("/profile");
     } catch (err) {
-      setError("Failed to sign up with Google. Please try again.");
+      if (err instanceof FirebaseError) {
+        switch (err.code) {
+          case 'auth/popup-closed-by-user':
+            setError("Google sign-up was cancelled. Please try again.");
+            break;
+          case 'auth/popup-blocked':
+            setError("Pop-up was blocked by your browser. Please allow pop-ups for this site.");
+            break;
+          case 'auth/account-exists-with-different-credential':
+            setError("An account already exists with the same email address but different sign-in credentials. Try signing in with a different method.");
+            break;
+          default:
+            setError(`Failed to sign up with Google: ${err.message}`);
+        }
+      } else {
+        setError("An unexpected error occurred during Google sign-up. Please try again.");
+      }
+      console.error("Google signup error:", err);
     }
   };
 

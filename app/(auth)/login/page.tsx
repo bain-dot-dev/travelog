@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AlertCircle, ArrowRight, Eye, EyeOff } from 'lucide-react';
 import Image from "next/image";
+import { FirebaseError } from 'firebase/app';
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -17,15 +18,34 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
+
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/");
     } catch (err) {
-      setError("Failed to log in. Please check your credentials.");
+      if (err instanceof FirebaseError) {
+        switch (err.code) {
+          case 'auth/user-not-found':
+          case 'auth/wrong-password':
+            setError("Invalid email or password. Please try again.");
+            break;
+          case 'auth/too-many-requests':
+            setError("Too many failed login attempts. Please try again later.");
+            break;
+          default:
+            setError(`Failed to log in: ${err.message}`);
+        }
+      } else {
+        setError("An unexpected error occurred. Please try again.");
+      }
+      console.error("Login error:", err);
     }
   };
 
@@ -36,9 +56,24 @@ export default function LoginPage() {
       await signInWithPopup(auth, googleProvider);
       router.push("/");
     } catch (err) {
-      setError("Failed to log in with Google. Please try again.");
+      if (err instanceof FirebaseError) {
+        switch (err.code) {
+          case 'auth/popup-closed-by-user':
+            setError("Google sign-in was cancelled. Please try again.");
+            break;
+          case 'auth/popup-blocked':
+            setError("Pop-up was blocked by your browser. Please allow pop-ups for this site.");
+            break;
+          default:
+            setError(`Failed to log in with Google: ${err.message}`);
+        }
+      } else {
+        setError("An unexpected error occurred during Google sign-in. Please try again.");
+      }
+      console.error("Google login error:", err);
     }
   };
+
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
@@ -100,13 +135,13 @@ export default function LoginPage() {
             Log in to your account
           </h1>
           <p className="text-[#2D2A3E]/70 mb-8">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               href="/signup"
               className="text-[#8D7FFF] hover:text-[#9F94FF]"
             >
               Sign up
-            </Link>
+          </Link>
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
