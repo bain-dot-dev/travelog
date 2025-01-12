@@ -56,8 +56,11 @@ export default function TestimonialsSection() {
 
   return (
     <section className="relative h-[810px] lg:h-[750px] xl:h-[950px] py-4">
-      <div className="absolute inset-0 -top-55 hidden xl:block">
+      <div className="absolute inset-0 -top-55 hidden xl:block 2xl:hidden">
         <Image src="/image/bgFluid.png" alt="Fluid" width={2506} height={958} />
+      </div>
+    <div className="absolute inset-0 -top-160 hidden 2xl:block">
+        <Image src="/image/bgFluid.png" alt="Fluid" width={2606} height={958} />
       </div>
       <div className="absolute inset-0 -top-102 z-0 hidden lg:block xl:hidden">
         <Image

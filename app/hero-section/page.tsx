@@ -54,7 +54,7 @@ export default function HeroSection() {
           <p>as many choices as possible</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center xl:justify-start gap-6 lg:gap-4 pt-4">
+        <div className="flex flex-col md:flex-row lg:flex-row items-center justify-center xl:justify-start gap-6 lg:gap-4 pt-4">
           <Button className="w-full font-circular lg:w-auto px-8 py-4 h-[65px] lg:h-[49px] bg-customColors-purple text-white rounded-full hover:bg-customColors-purple font-bold shadow-xl shadow-gray-200 drop-shadow-md">
             Get Started
           </Button>
