@@ -75,7 +75,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="h-screen grid lg:grid-cols-2 overflow-hidden p-4 bg-[#F8F7FF]">
+    <div className="h-screen grid lg:grid-cols-2 overflow-hidden p-4 bg-customColors-lavenderWhite">
       <div className="relative hidden lg:block h-full">
         <div className="absolute top-5 left-5 z-50">
           <Image
@@ -95,7 +95,7 @@ export default function LoginPage() {
             className="rounded-xl h-full w-full object-cover"
           />
         </div>
-        <div className="absolute bottom-5 left-5 right-40 text-[#2D2A3E] font-circular font-bold leading-8">
+        <div className="absolute bottom-5 left-5 right-40 text-customColors-coalGrey font-circular font-bold leading-8">
           <h2 className="text-4xl font-light">
             Travlog
             <br />
@@ -104,7 +104,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <div className="bg-[#F8F7FF] p-8 flex flex-col h-full">
+      <div className="bg-customColors-lavenderWhite p-8 flex flex-col h-full">
         <div className="lg:hidden mb-8">
           <Image
             src="/icons/travelogIcon.svg"
@@ -118,7 +118,7 @@ export default function LoginPage() {
         <div className="flex justify-end mb-12">
           <Button
             variant="ghost"
-            className="text-[#2D2A3E]/70 hover:text-[#2D2A3E] hover:bg-white/10"
+            className="text-customColors-coalGrey/70 hover:text-customColors-coalGrey hover:bg-white/10"
             asChild
           >
             <Link href="/">
@@ -128,14 +128,14 @@ export default function LoginPage() {
         </div>
 
         <div className="flex-1 max-w-md mx-auto w-full">
-          <h1 className="text-4xl font-light text-[#2D2A3E] mb-4">
+          <h1 className="text-4xl font-light text-customColors-coalGrey mb-4">
             Log in to your account
           </h1>
-          <p className="text-[#2D2A3E]/70 mb-8">
+          <p className="text-customColors-coalGrey/70 mb-8">
             Don&apos;t have an account?{" "}
             <Link
               href="/signup"
-              className="text-[#8D7FFF] hover:text-[#9F94FF]"
+              className="text-customColors-lavender hover:text-customColors-anotherLavender"
             >
               Sign up
             </Link>
@@ -149,7 +149,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="bg-[#FFFFFF] border-[#E0E0E0] text-[#2D2A3E] placeholder:text-[#6B6885] h-12"
+                className="bg-white border-customColors-eggShell text-customColors-coalGrey placeholder:text-customColors-darkPurple h-12"
               />
             </div>
 
@@ -160,12 +160,12 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="bg-[#FFFFFF] border-[#E0E0E0] text-[#2D2A3E] placeholder:text-[#6B6885] h-12 pr-10"
+                className="bg-white border-customColors-eggShell text-customColors-coalGrey placeholder:text-customColors-darkPurple h-12 pr-10"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6B6885] hover:text-[#2D2A3E]"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-customColors-darkPurple hover:text-customColors-coalGrey"
               >
                 {showPassword ? (
                   <EyeOff className="h-5 w-5" />
@@ -184,7 +184,7 @@ export default function LoginPage() {
 
             <Button
               type="submit"
-              className="w-full bg-[#8D7FFF] hover:bg-[#9F94FF] text-white h-12"
+              className="w-full bg-customColors-lavender hover:bg-customColors-anotherLavender text-white h-12"
             >
               Log in
             </Button>
@@ -194,7 +194,7 @@ export default function LoginPage() {
                 <div className="w-full border-t border-customColors-black/20" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-[#F8F7FF] px-2 text-[#6B6885]">
+                <span className="bg-customColors-lavenderWhite px-2 text-customColors-darkPurple">
                   Or log in with
                 </span>
               </div>
@@ -204,7 +204,7 @@ export default function LoginPage() {
               type="button"
               onClick={handleGoogleLogin}
               variant="outline"
-              className="w-full bg-transparent border-[#E0E0E0] text-[#2D2A3E] hover:bg-white/5 h-12"
+              className="w-full bg-transparent border-customColors-eggShell text-customColors-coalGrey hover:bg-white/5 h-12"
             >
               <Image
                 src="/image/google-logo.png"

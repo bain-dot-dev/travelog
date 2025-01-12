@@ -64,7 +64,7 @@ export function Navbar() {
       ) : (
         <>
           <Link href="/login" passHref>
-            <Button className="text-sm font-bold px-4 py-2 hover:bg-gray-100 rounded-full">
+            <Button className="text-sm font-bold px-4 py-2 hover:bg--100 rounded-full">
               Log In
             </Button>
           </Link>

@@ -18,17 +18,9 @@ const partners = [
 
 export default function PartnerLogos() {
   return (
-    <div className="pb-4 lg:pb-16 lg:pt-20">
-      <div className="absolute top-96  right-0 xl:block hidden gap-6">
-        <Image
-          src="/icons/yellowOrb.svg"
-          alt="Yellow orb"
-          width={500}
-          height={500}
-        />
-      </div>
-      <div className="max-w-7xl mx-auto px-4 lg:px-32 xl:px-10">
-        <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-[102px]">
+    <div className="pb-4 lg:pb-20 lg:pt-28">
+      <div className="max-w-7xl mx-auto px-4 lg:px-44 xl:px-10">
+        <div className="flex flex-wrap items-center justify-center gap-8 xl:gap-[102px]">
           {partners.map((partner, index) => (
             <Image
               key={index}

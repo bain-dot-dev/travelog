@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const footerData = [
   {
@@ -32,15 +37,26 @@ const footerData = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="relative w-full bg-white mx-auto px-4 lg:px-16 xl:px-32 py-4 lg:py-16">
-      <div className="absolute lg:-top-10 xl:-top-48 right-0 lg:w-24 xl:w-28 h-44 hidden lg:block">
-                <Image
-                  src="/icons/wavyLine.svg"
-                  alt="Leaf Icon"
-                  width={332}
-                  height={351}
-                />
-              </div>
+    <footer
+      id="footer"
+      className="relative w-full bg-white mx-auto px-4 lg:px-16 xl:px-32 py-4 lg:py-16 xl:py-20"
+    >
+      <div className="absolute -top-48 right-0 w-28 xl:block hidden">
+        <Image
+          src="/icons/wavyLine.svg"
+          alt="Leaf Icon"
+          width={332}
+          height={351}
+        />
+      </div>
+      <div className="absolute -top-18 right-0 w-20 xl:hidden lg:block hidden">
+        <Image
+          src="/icons/wavyLine2.svg"
+          alt="Leaf Icon"
+          width={332}
+          height={351}
+        />
+      </div>
       <div className="container mx-auto 2xl:px-11 max-w-7xl">
         <div className="flex flex-col xl:flex-row justify-between gap-8 lg:gap-16 xl:gap-16">
           <div className="space-y-8 font-circular xl:w-[560px] xl:h-[183px]">
@@ -56,7 +72,7 @@ export default function Footer() {
                 Travlog
               </span>
             </div>
-            <p className="text-gray-500 text-[16px] leading-[25px] lg:text-[23px] lg:leading-[36px] ">
+            <p className="text-customColors-black/50 text-[16px] leading-[25px] lg:text-[23px] lg:leading-[36px] ">
               Contrary to popular belief, Lorem Ipsum is not simply random text.
               It has roots in a piece of classical Latin literature from 45 BC.
             </p>
@@ -92,22 +108,22 @@ export default function Footer() {
           </div>
           <div className="hidden lg:flex flex-col lg:flex-row justify-between">
             {footerData.map((section, index) => (
-              <div className="space-y-4 font-inter" key={index}>
+              <div className="space-y-4 font-inter lg:w-[220px]" key={index}>
                 <h3 className="text-[23px] leading-[27px] text-customColors-black font-bold pb-4">
                   {section.title}
                 </h3>
-                <ul className="space-y-8 text-[18px] leading-[28px] xl:w-[165px]">
+                <ul className="space-y-8 font-inter text-[18px] leading-[28px]">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
                       {link.href ? (
                         <Link
                           href={link.href}
-                          className="text-customColors-black/50 hover:text-customColors-black"
+                          className="text-customColors-black/75 hover:text-customColors-black"
                         >
                           {link.name}
                         </Link>
                       ) : (
-                        <span className="text-customColors-black/50">
+                        <span className="text-customColors-black/75">
                           {link.name}
                         </span>
                       )}

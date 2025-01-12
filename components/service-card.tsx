@@ -16,7 +16,7 @@ export function ServiceCard({
 }: ServiceCardProps) {
   return (
     <Card
-      className={`rounded-[32px] shadow-xl border hover:border-none shadow-gray-200/50 hover:drop-shadow-2xl backdrop-blur-2xl backdrop-filter transition-shadow h-[279px] lg:w-[288px] lg:h-[443px] xl:w-[350px] xl:h-[443px] ${className}`}
+      className={`rounded-[32px] hover:shadow-xl border hover:border-none hover:drop-shadow-xl backdrop-blur-2xl backdrop-filter transition-shadow h-[279px] lg:w-[288px] lg:h-[443px] xl:w-[350px] xl:h-[443px] ${className}`}
     >
       <CardHeader className="flex items-center justify-center py-8 lg:py-16">
         <div className="w-16 h-16 relative">

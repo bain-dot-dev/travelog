@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { DestinationCard } from "../../../components/destination-card";
-import { Button } from "../../../components/ui/button";
+import { DestinationCard } from "../../components/destination-card";
+import { Button } from "../../components/ui/button";
 import Image from "next/image";
 
 const destinations = [
@@ -108,16 +108,16 @@ export default function Destinations() {
   return (
     <section className="max-w-7xl mx-auto px-4 xl:px-10">
       <div className="flex flex-col xl:flex-row justify-between items-center py-4 lg:py-0">
-        <div className="space-y-4 font-circular">
+        <div className="space-y-4  font-circular">
           <span className="flex justify-center xl:justify-start text-customColors-pink text-[16px] leading-[19px] xl:text-[23px] xl:leading-[27px] font-bold uppercase tracking-wider">
             Top Destination
           </span>
-          <h2 className="text-[32px] leading-[38px] lg:text-[44px] lg:leading-[52px] font-bold text-customColors-black-">
+          <h2 className="text-[32px] leading-[38px] lg:text-[44px] lg:leading-[52px] font-bold text-customColors-black ">
             Explore top destination
           </h2>
         </div>
 
-        <div className="flex items-center py-4 lg:py-16 gap-60  lg:gap-8">
+        <div className="flex items-center pb-4 pt-6 lg:py-16 gap-65  lg:gap-8">
           <Button
             variant="outline"
             className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] rounded-full hover:bg-white transition-colors shadow-lg border shadow-gray-200/50 hover:drop-shadow-2xl backdrop-blur-2xl backdrop-filter"
@@ -146,7 +146,7 @@ export default function Destinations() {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-center gap-8">
+      <div className="flex flex-col lg:flex-row justify-center gap-10">
         {destinations
           .slice(currentIndex, currentIndex + 3)
           .map((destination, index) => (

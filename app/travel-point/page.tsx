@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card, CardContent } from "../../../components/ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 
 const stats = [
   { value: "500+", label: "Holiday Package" },
@@ -10,7 +10,7 @@ const stats = [
 
 export default function TravelPoint() {
   return (
-    <section id="travelpoint" className="pt-16 lg:pt-24 lg:pb-32">
+    <section id="travelpoint" className="pt-16 lg:pt-24 lg:pb-32 xl:pb-10">
       <div className="max-w-7xl mx-auto px-4 lg:px-20 xl:px-4">
         <div className="grid xl:grid-cols-2 lg:gap-20 xl:gap-80 items-center">
           <div className="relative w-[398px] h-[318px] lg:w-[871px] lg:h-[697px]">
@@ -34,14 +34,14 @@ export default function TravelPoint() {
               <h2 className="text-[32px] text-center xl:text-start lg:text-[40px] xl:text-[44px] font-bold font-circular text-customColors-black leading-[38px] lg:leading-[48px] xl:leading-[53px]">
                 We helping you find your dream location
               </h2>
-              <div className="lg:px-16">
-                <p className="text-customColors-black/50 text-[18px] text-center xl:text-start font-inter font-medium leading-[29px] lg:pl-8 xl:pl-0 lg:pr-8 xl:pt-4">
+              <div className="lg:px-0 xl:px-0">
+                <p className="text-customColors-black/50 text-[16px] lg:text-[18px] leading-[25px] lg:leading-[29px] text-center xl:text-start font-inter font-medium tracking-wide xl:pl-0 xl:pt-4">
                   Contrary to popular belief, Lorem Ipsum is not simply random
                   text. It has roots in a piece of classical Latin literature
                   from 45 BC.
                 </p>
 
-                <div className="grid grid-rows-2 lg:grid-cols-2 gap-8 lg:pt-10 xl:pt-12">
+                <div className="grid grid-rows-2 lg:grid-cols-2 gap-4 lg:gap-8 pt-8 lg:pt-10 xl:pt-16">
                   {stats.map((stat, index) => (
                     <Card key={index} className="space-y-2 rounded-[32px]">
                       <CardContent className="flex flex-col items-center justify-center py-8 mx-auto">
@@ -58,7 +58,7 @@ export default function TravelPoint() {
               </div>
             </div>
 
-            <div className="absolute top-60 -right-11 w-28 rounded-full hidden xl:block">
+            <div className="absolute top-58 -right-12 w-28 rounded-full hidden xl:block">
               <Image
                 src="/image/starCoupon.png"
                 alt="Star Tag"

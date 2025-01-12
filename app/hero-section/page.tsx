@@ -1,13 +1,22 @@
 import Image from "next/image";
-import { Button } from "../../../components/ui/button";
+import { Button } from "../../components/ui/button";
 
 export default function HeroSection() {
   return (
     <section
       id="home"
-      className="flex flex-col-reverse xl:flex-col xl:grid xl:grid-cols-2 p-4 pt-8 lg:p-6 xl:p-8 max-w-7xl mx-auto relative "
+      className="flex flex-col-reverse xl:flex-col xl:grid xl:grid-cols-2 p-4 pb-16 pt-8 lg:p-6 xl:p-8 max-w-7xl mx-auto relative"
     >
-      <div className="absolute -left-14 -bottom-36 hidden xl:flex flex-col  gap-6">
+      <div className="absolute inset-0 -top-30 left-0 xl:hidden lg:block hidden">
+        <Image
+          src="/icons/orangeOrb.svg"
+          alt="Orange orb"
+          width={500}
+          height={500}
+          className="text-customColors-orange "
+        />
+      </div>
+      <div className="absolute lg:-bottom-8 xl:-left-14 xl:-bottom-20 hidden lg:flex flex-col  gap-6">
         <Image
           src="/icons/triangleSideIcon.svg"
           alt="Triangle side"
@@ -17,7 +26,7 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="space-y-6 lg:space-y-11 lg:max-w-[896px] xl:max-w-[412px] mx-auto xl:mx-0 text-center xl:text-left pt-10 lg:pt-28 xl:pt-0">
+      <div className="space-y-6 lg:space-y-11 lg:max-w-[896px] xl:max-w-[412px] mx-auto xl:mx-0 text-center xl:text-left pt-10 lg:pt-28 xl:pt-16">
         <Button className="text-sm font-bold bg-white outline-customColors-white hover:bg-gray-100 rounded-full shadow-lg shadow-gray-200/50 drop-shadow-sm">
           <span className="text-customColors-pink text-md font-bold font-circular">
             Explore the world!
@@ -30,7 +39,7 @@ export default function HeroSection() {
             className="ml-2"
           />
         </Button>
-        <div className="w-full max-w-4xl mx-auto px-4 lg:px-32">
+        <div className="w-full max-w-4xl mx-auto px-4 lg:px-32 xl:px-0">
           <h1 className="text-4xl lg:text-[56px] xl:text-[69px] font-bold font-circular leading-[48px] lg:leading-[67px] xl:leading-[82px]">
             Travel{" "}
             <span className="text-customColors-pink leading-[48px] lg:leading-[67px] xl:leading-[82px]">
@@ -45,13 +54,13 @@ export default function HeroSection() {
           <p>as many choices as possible</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center xl:justify-start gap-4 pt-4">
-          <Button className="w-full font-circular lg:w-auto px-8 py-4 h-14 bg-customColors-purple text-white rounded-full hover:bg-customColors-purple font-bold shadow-xl shadow-gray-200 drop-shadow-md">
+        <div className="flex flex-col lg:flex-row items-center justify-center xl:justify-start gap-6 lg:gap-4 pt-4">
+          <Button className="w-full font-circular lg:w-auto px-8 py-4 h-[65px] lg:h-[49px] bg-customColors-purple text-white rounded-full hover:bg-customColors-purple font-bold shadow-xl shadow-gray-200 drop-shadow-md">
             Get Started
           </Button>
           <Button
             variant="outline"
-            className="w-full font-circular lg:w-auto flex items-center justify-center gap-2 px-8 py-4 h-14 text-gray-900 hover:bg-gray-100 rounded-full font-bold"
+            className="w-full font-circular lg:w-auto flex items-center justify-center gap-2 px-8 py-4 h-18 lg:h-14 text-gray-900 hover:bg-gray-100 rounded-full font-bold"
           >
             <Image
               src="/icons/playButtonIcon.svg"

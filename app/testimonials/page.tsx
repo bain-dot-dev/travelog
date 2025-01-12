@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Button } from "../../../components/ui/button";
+import { Button } from "../../components/ui/button";
 
 interface Testimonial {
   name: string;
@@ -55,18 +55,29 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative h-[810px] lg:h-[750px] xl:h-[1000px] py-4">
+    <section className="relative h-[810px] lg:h-[750px] xl:h-[950px] py-4">
+      <div className="absolute inset-0 -top-55 hidden xl:block">
+        <Image src="/image/bgFluid.png" alt="Fluid" width={2506} height={958} />
+      </div>
+      <div className="absolute inset-0 -top-102 z-0 hidden lg:block xl:hidden">
+        <Image
+          src="/image/bgFluid2.png"
+          alt="Fluid"
+          width={1204}
+          height={258}
+        />
+      </div>
       <div className="relative container mx-auto lg:pt-0 xl:pt-32 px-4">
         <div className="text-center space-y-4 mb-16">
           <p className="text-customColors-pink text-[16px] leading-[19px] lg:text-[23px] lg:leading-[27px]  font-medium tracking-wide uppercase">
             TESTIMONIALS
           </p>
-          <h2 className="text-[32px] leading-[38px] lg:text-[40px] lg:leading-[48px] xl:text-[44px] xl:leading-[52px] font-bold text-gray-900">
+          <h2 className="text-[32px] leading-[38px] lg:text-[40px] lg:leading-[48px] xl:text-[44px] xl:leading-[52px] font-bold text-customColors-black">
             Trust our clients
           </h2>
           <Button
             onClick={prevSlide}
-            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] absolute left-12 lg:left-40 top-full -translate-x-8 lg:top-1/2  lg:-translate-y-1/2 lg:-translate-x-28 xl:-translate-y-2/4 xl:-translate-x-32 rounded-full bg-white shadow-lg flex items-center justify-center z-10 hover:bg-gray-50 transition-colors"
+            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] absolute left-12 lg:left-40 top-full -translate-x-8 lg:top-80 xl:top-108 lg:-translate-y-1/2 lg:-translate-x-28 xl:-translate-x-32 rounded-full bg-white shadow-lg flex items-center justify-center z-10 hover:bg-gray-50 transition-colors"
             aria-label="Previous testimonial"
           >
             <Image
@@ -79,7 +90,7 @@ export default function TestimonialsSection() {
           </Button>
           <Button
             onClick={nextSlide}
-            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] absolute right-12 lg:right-40 top-full translate-x-8 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-28 xl:-translate-y-2/4 xl:translate-x-32 rounded-full bg-purple-600 flex items-center justify-center z-10 hover:bg-purple-700 transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
+            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] absolute right-12 lg:right-40 top-full translate-x-8 lg:top-80 xl:top-108 lg:-translate-y-1/2 lg:translate-x-28 xl:translate-x-32 rounded-full bg-purple-600 flex items-center justify-center z-10 hover:bg-purple-700 transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
             aria-label="Next testimonial"
           >
             <Image
@@ -92,7 +103,7 @@ export default function TestimonialsSection() {
           </Button>
         </div>
 
-        <div className="relative  max-w-3xl mx-auto">
+        <div className="relative max-w-4xl mx-auto">
           <div className="text-center">
             <div className="mb-8">
               <div className="w-32 h-32 rounded-full bg-customColors-orange mx-auto mb-14 overflow-hidden">
@@ -108,16 +119,16 @@ export default function TestimonialsSection() {
                 <h5 className="text-[28px] leading-[33px] font-circular font-semibold text-customColors-orange mr-2">
                   {testimonials[currentSlide].name}
                 </h5>
-                <h6 className="text-gray-600 text-[24px] leading-[33px] font-circular font-semibold mr-2 rotate-12">
+                <h6 className="text-customColors-black/75 text-[24px] leading-[33px] font-circular font-semibold mr-2 rotate-12">
                   /
                 </h6>
-                <h5 className="text-gray-600 text-[24px] leading-[27px] font-circular font-semibold">
+                <h5 className="text-customColors-black/75 text-[24px] leading-[27px] font-circular font-semibold">
                   {testimonials[currentSlide].role}
                 </h5>
               </div>
             </div>
 
-            <div className="flex justify-center gap-4 mb-6">
+            <div className="flex justify-center gap-4 mb-8">
               {[...Array(testimonials[currentSlide].rating)].map((_, i) => (
                 <Star
                   key={i}
@@ -126,7 +137,7 @@ export default function TestimonialsSection() {
               ))}
             </div>
 
-            <p className="text-gray-600 text-[16px] leading-[25px] lg:text-[18px] lg:leading-[28px] xl:text-[23px] xl:leading-9 max-w-lg mx-auto pt-5">
+            <p className="text-gray-600 text-[16px] leading-[25px] lg:text-[18px] lg:leading-[28px] xl:text-[23px] xl:leading-9 lg:max-w-lg xl:max-w-[870px] mx-auto  pt-5">
               {testimonials[currentSlide].content}
             </p>
           </div>
