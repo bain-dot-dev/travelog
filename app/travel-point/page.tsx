@@ -44,7 +44,7 @@ export default function TravelPoint() {
                   from 45 BC.
                 </p>
                 <div className="relative">
-                  <div className="absolute -top-14 -right-11 w-28 rounded-full hidden xl:block">
+                  <div className="absolute -top-13 -right-9 w-28 rounded-full hidden xl:block">
                     <Image
                       src="/image/starCoupon.png"
                       alt="Star Tag"
