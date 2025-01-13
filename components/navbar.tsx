@@ -24,34 +24,52 @@ export function Navbar() {
     return () => unsubscribe();
   }, []);
 
-  const NavLinks = () => (
-    <>
-      <Link
-        href="/"
-        className="text-sm font-bold text-customColors-black/50 hover:text-customColors-black"
-      >
-        Home
-      </Link>
-      <Link
-        href="#services"
-        className="text-sm font-bold text-customColors-black/50 hover:text-customColors-black"
-      >
-        Discover
-      </Link>
-      <Link
-        href="#travelpoint"
-        className="text-sm font-bold text-customColors-black/50 hover:text-customColors-black"
-      >
-        Special Deals
-      </Link>
-      <Link
-        href="#footer"
-        className="text-sm font-bold text-customColors-black/50 hover:text-customColors-black"
-      >
-        Contact
-      </Link>
-    </>
-  );
+  const NavLinks = () => {
+    const handleScroll = (
+      e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+      targetId: string
+    ) => {
+      e.preventDefault();
+
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    return (
+      <>
+        <Link
+          href="#home"
+          className="text-sm font-bold text-customColors-black/50 hover:text-customColors-black"
+          onClick={(e) => handleScroll(e, "#home")}
+        >
+          Home
+        </Link>
+        <Link
+          href="#services"
+          className="text-sm font-bold text-customColors-black/50 hover:text-customColors-black"
+          onClick={(e) => handleScroll(e, "#services")}
+        >
+          Discover
+        </Link>
+        <Link
+          href="#travelpoint"
+          className="text-sm font-bold text-customColors-black/50 hover:text-customColors-black"
+          onClick={(e) => handleScroll(e, "#travelpoint")}
+        >
+          Special Deals
+        </Link>
+        <Link
+          href="#footer"
+          className="text-sm font-bold text-customColors-black/50 hover:text-customColors-black"
+          onClick={(e) => handleScroll(e, "#footer")}
+        >
+          Contact
+        </Link>
+      </>
+    );
+  };
 
   const AuthButtons = () => (
     <>
