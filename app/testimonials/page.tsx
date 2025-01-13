@@ -66,14 +66,6 @@ export default function TestimonialsSection() {
               height={958}
             />
           </div>
-          {/* <div className="absolute inset-0  hidden 2xl:block">
-            <Image
-              src="/image/bgFluid.png"
-              alt="Fluid"
-              width={2606}
-              height={958}
-            />
-          </div> */}
           <div className="absolute inset-0 -top-106 z-0 hidden lg:block xl:hidden">
             <Image
               src="/image/bgFluid2.png"
@@ -94,7 +86,7 @@ export default function TestimonialsSection() {
           </h2>
           <Button
             onClick={prevSlide}
-            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] absolute left-12 lg:left-40 top-full -translate-x-8 lg:top-84 xl:top-108 lg:-translate-y-1/2 lg:-translate-x-28 xl:-translate-x-32 2xl:-translate-x-0 rounded-full bg-white shadow-lg flex items-center justify-center z-10 hover:bg-gray-50 transition-colors"
+            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] absolute left-12 lg:left-40 top-full -translate-x-8 lg:top-84 xl:top-110  lg:-translate-y-1/2 lg:-translate-x-28 xl:-translate-x-32 2xl:-translate-x-0 rounded-full bg-white shadow-lg flex items-center justify-center z-10 hover:bg-gray-50 transition-colors"
             aria-label="Previous testimonial"
           >
             <Image
@@ -107,7 +99,7 @@ export default function TestimonialsSection() {
           </Button>
           <Button
             onClick={nextSlide}
-            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] absolute right-12 lg:right-40 top-full translate-x-8 lg:top-84 xl:top-108 lg:-translate-y-1/2 lg:translate-x-28 xl:translate-x-32 2xl:-translate-x-0 rounded-full bg-purple-600 flex items-center justify-center z-10 hover:bg-purple-700 transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
+            className="px-4 w-16 h-16 lg:w-[100px] lg:h-[100px] absolute right-12 lg:right-40 top-full translate-x-8 lg:top-84 xl:top-110  lg:-translate-y-1/2 lg:translate-x-28 xl:translate-x-32 2xl:-translate-x-0 rounded-full bg-purple-600 flex items-center justify-center z-10 hover:bg-purple-700 transition-colors shadow-gray-200 shadow-xl drop-shadow-lg"
             aria-label="Next testimonial"
           >
             <Image
