@@ -34,7 +34,7 @@ const destinations = [
     rating: 4.9,
   },
   {
-    image: "/image/savannaWildlife.png",
+    image: "/image/savannaWildLife.png",
     title: "Savanna Wildlife Safari",
     location: "Kenya",
     price: 450.75,
