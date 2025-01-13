@@ -56,9 +56,9 @@ export default function TestimonialsSection() {
 
   return (
     <section className="relative h-[810px] lg:h-[750px] xl:h-[950px] py-4">
-      <div className="relative mx-auto 2xl:max-w-[1440px]">
+      <div className="relative mx-auto max-w-[1700px]">
         <div className="absolute h-[750px] inset-0 z-0 w-full">
-          <div className="absolute inset-0 lg:-top-55 xl:-top-55 2xl:-top-60 hidden xl:block 2xl:block">
+          <div className="absolute inset-0 xl:-top-58 2xl:-top-84 hidden xl:block">
             <Image
               src="/image/bgFluid.png"
               alt="Fluid"

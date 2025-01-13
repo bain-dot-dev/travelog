@@ -97,7 +97,7 @@ export default function HeroSection() {
                     className="object-cover rounded-2xl lg:rounded-[32px]"
                   />
                 </div>
-                <div className="absolute transform -translate-x-1/2 -left-10 top-28 md:left-8 lg:left-44 xl:-left-3 md:top-74 lg:top-84 xl:top-72 -translate-y-1/2">
+                <div className="absolute transform -translate-x-1/2 -left-10 top-28 md:left-8 lg:left-44 xl:-left-3 md:top-74 lg:top-84 xl:top-74 -translate-y-1/2">
                   <div className="bg-customColors-pink h-8 w-8 md:h-16 md:w-16 rounded-full p-2 md:p-4 shadow-2xl drop-shadow-2xl">
                     <Image
                       src="/icons/paperPlaneIcon.svg"
