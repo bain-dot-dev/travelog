@@ -10,7 +10,7 @@ interface FeatureItemProps {
 export function FeatureItem({ icon, title, description }: FeatureItemProps) {
   return (
     <Card className="flex items-start border-transparent hover:border-customColors-black/10 shadow-none gap-6 rounded-3xl p-8  transition-all">
-      <CardContent className="flex flex-col lg:flex-row items-start xl:items-center gap-8 p-0">
+      <CardContent className="flex flex-col md:flex-row items-start xl:items-center gap-8 p-0">
         <Image
           src={icon}
           alt={title}
@@ -19,7 +19,7 @@ export function FeatureItem({ icon, title, description }: FeatureItemProps) {
           className="w-24 h-24"
         />
 
-        <div className="space-y-2 lg:py-4">
+        <div className="space-y-2 md:py-4">
           <h3 className="text-[23px] leading-[27px] font-bold text-[#1E1E1E]">
             {title}
           </h3>

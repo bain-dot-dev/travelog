@@ -53,8 +53,8 @@ export default function Newsletter() {
   };
 
   return (
-    <div className="relative min-h-[580px] w-full  xl:pt-0 lg:px-16 xl:px-0 lg:py-16">
-      <div className="relative flex items-center justify-center w-[398px] h-[547px] lg:h-[572px] xl:h-[608px] lg:w-[897px] xl:w-[1184px] mx-auto bg-[#FFFBF1] rounded-[32px]">
+    <div className="relative min-h-[580px] md:min-h-[440px] lg:min-h-[580px] w-full  xl:pt-0 lg:px-16 xl:px-0 lg:py-16">
+      <div className="relative flex items-center justify-center w-[396px] h-[547px] md:h-[400px] lg:h-[572px] xl:h-[608px] md:w-[700px] lg:w-[897px] xl:w-[1184px] mx-auto bg-[#FFFBF1] rounded-[32px]">
         <div className="absolute -top-17 -left-8 w-46 h-44 hidden lg:block">
           <Image
             src="/icons/trianglePolkadots.svg"
@@ -63,7 +63,7 @@ export default function Newsletter() {
             height={176}
           />
         </div>
-        <div className="relative w-[398px] h-[547px] lg:h-[572px] lg:w-[897px] xl:w-[1184px] py-8 px-8 lg:px-16 lg:py-16 xl:pt-32">
+        <div className="relative w-[396px] h-[547px] md:h-[400px] lg:h-[572px] md:w-[700px] lg:w-[897px] xl:w-[1184px] py-8 px-8 lg:px-16 lg:py-16 xl:pt-32">
           <form
             onSubmit={handleSubscribe}
             className="max-w-5xl text-center space-y-8 pt-8"
@@ -89,7 +89,7 @@ export default function Newsletter() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="pl-16 h-18 lg:h-24 w-[334px] lg:w-[502px] xl:w-[757px] rounded-[32px] font-circular !text-[16px] !leading-[23px] lg:!text-[23px] lg:!leading-[27px] font-bold placeholder:text-customColors-black/75 placeholder:text-[16px] lg:placeholder:text-[23px] placeholder:leading-[16px] lg:placeholder:leading-[27px] placeholder:font-bold placeholder:pl-2"
+                  className="pl-16 h-18 lg:h-24 w-[334px] md:w-[400px] lg:w-[502px] xl:w-[757px] rounded-[32px] font-circular !text-[16px] !leading-[23px] lg:!text-[23px] lg:!leading-[27px] font-bold placeholder:text-customColors-black/75 placeholder:text-[16px] lg:placeholder:text-[23px] placeholder:leading-[16px] lg:placeholder:leading-[27px] placeholder:font-bold placeholder:pl-2"
                 />
               </div>
               <Button

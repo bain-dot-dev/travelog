@@ -48,7 +48,7 @@ export default function Services() {
         </div>
 
         <div className="flex lg:items-center lg:justify-center xl:items-start xl:justify-start overflow-hidden xl:overflow-x-auto no-scrollbar mx-0 lg:px-16 xl:px-0">
-          <div className="flex flex-col md:flex-row lg:flex-row w-[398px] h-[900px] md:w-[869px] md:h-[520px] lg:w-[869px] lg:h-[520px] xl:w-[1092px] xl:h-[480px] gap-5">
+          <div className="flex flex-col md:flex-row lg:flex-row w-[398px] h-[900px] md:w-[869px] md:h-[420px] lg:w-[869px] lg:h-[520px] xl:w-[1092px] xl:h-[480px] gap-5">
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}

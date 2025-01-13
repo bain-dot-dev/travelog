@@ -73,9 +73,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="relative h-[366px] lg:h-[713px] w-full pt-16 xl:pt-0">
+      <div className="relative mx-auto h-[366px] md:h-[713px] md:max-w-lg lg:max-w-5xl xl:max-w-7xl pt-16 xl:pt-0">
         <div className="absolute inset-0 z-0 w-full">
-          <div className="absolute inset-0 z-0 w-[396px] h-[147px] lg:w-[772px] lg:h-[287px] lg:left-24  lg:top-12 xl:-left-40 xl:top-0">
+          <div className="absolute inset-0 z-0 w-[396px] h-[147px] md:w-[762px] md:h-[277px] -left-22 md:-left-32 lg:left-6 lg:top-12 xl:-left-40 xl:top-0">
             <Image
               src="/icons/globeIcon.svg"
               alt="Globe"
@@ -85,52 +85,50 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative z-10 top-5 sm:top-20 sm:-left-16">
+        <div className="relative z-10 top-5 md::top-20 sm:-left-16">
           <div className="grid relative z-30">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="relative">
-                <div className="relative w-[139px] h-[154px] lg:w-[272px] lg:h-[300px] left-12 lg:left-64 -top-10 lg:-top-4 xl:-left-2 xl:top-0">
+                <div className="relative w-[139px] h-[154px] md:w-[272px] md:h-[300px] -left-10 md:left-8 lg:left-44 -top-10 md:-top-2 lg:top-10  xl:-left-2 xl:top-0">
                   <Image
                     src="/image/santoriniView.png"
                     alt="Santorini view"
-                    width={272}
-                    height={300}
+                    fill
                     className="object-cover rounded-2xl lg:rounded-[32px]"
                   />
                 </div>
-                <div className="absolute transform -translate-x-1/2 left-12 top-28 lg:left-64 xl:-left-3 lg:top-70 xl:top-72 -translate-y-1/2">
-                  <div className="bg-customColors-pink h-8 w-8 lg:h-16 lg:w-16 rounded-full p-2 lg:p-4 shadow-2xl drop-shadow-2xl">
+                <div className="absolute transform -translate-x-1/2 -left-10 top-28 md:left-8 lg:left-44 xl:-left-3 md:top-74 lg:top-84 xl:top-72 -translate-y-1/2">
+                  <div className="bg-customColors-pink h-8 w-8 md:h-16 md:w-16 rounded-full p-2 md:p-4 shadow-2xl drop-shadow-2xl">
                     <Image
                       src="/icons/paperPlaneIcon.svg"
                       alt="Paper plane"
                       width={28}
                       height={28}
-                      className="text-white w-4 h-4 lg:h-8 lg:w-8"
+                      className="text-white w-4 h-4 md:h-8 md:w-8"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="relative w-[220px] lg:w-[400px] xl:w-[500px] -mt-41 lg:mt-24 xl:mt-28 left-40 lg:-left-2 xl:-left-34">
-                <div className="relative w-[139px] h-[205px] lg:w-[272px] lg:h-[300px] mx-auto">
+              <div className="relative w-[220px] lg:w-[400px] xl:w-[500px] -mt-41 md:mt-26 lg:mt-40 xl:mt-28 left-18 md:left-16 lg:-left-2 xl:-left-34">
+                <div className="relative w-[139px] h-[205px] md:w-[272px] md:h-[400px] mx-auto">
                   <Image
                     src="/image/cityView.png"
                     alt="City view"
-                    width={272}
-                    height={300}
+                    fill
                     className="object-cover rounded-[32px]"
                   />
                 </div>
-                <div className="absolute -right-2 lg:-right-7 xl:right-5 top-38 lg:top-74 xl:top-74 bg-white rounded-full py-4 px-4 lg:px-8 h-7 lg:h-14 backdrop-blur-2xl backdrop-filter shadow-sm drop-shadow-2xl flex items-center gap-2">
+                <div className="absolute -right-2 md:-right-36 lg:-right-7 xl:right-5 top-38 md:top-72 lg:top-74 xl:top-74 bg-white rounded-full py-4 px-4 md:px-8 h-7 md:h-14 backdrop-blur-2xl backdrop-filter shadow-sm drop-shadow-2xl flex items-center gap-2">
                   <div className="flex items-center space-x-2">
                     <Image
                       src="/icons/mapPinIcon.svg"
                       alt="City view"
                       width={24}
                       height={24}
-                      className="text-customColors-dandelion w-3 h-3 lg:w-6 lg:h-6"
+                      className="text-customColors-dandelion w-3 h-3 md:w-6 md:h-6"
                     />
-                    <span className="text-[7px] leading-[8px] lg:text-sm lg:leading-4h  font-medium font-circular">
+                    <span className="text-[7px] leading-[8px] md:text-sm md:leading-4h  font-medium font-circular">
                       Top Places
                     </span>
                   </div>
@@ -138,26 +136,25 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="relative -mt-24 lg:-mt-20 xl:-mt-20 -left-21 lg:-left-24 xl:-left-44">
-              <div className="relative w-[139px] h-[154px] lg:w-[272px] lg:h-[300px] mx-auto">
+            <div className="relative -mt-24 md:-mt-45 lg:-mt-45 -left-21 md:-left-22 lg:-left-24 xl:-left-44">
+              <div className="relative w-[139px] h-[154px] md:w-[272px] md:h-[300px] mx-auto">
                 <Image
                   src="/image/mountainView.png"
                   alt="Mountain view"
-                  width={272}
-                  height={300}
+                  fill
                   className="object-cover rounded-[32px]"
                 />
               </div>
             </div>
 
-            <div className="absolute -bottom-1 right-30  lg:right-68 xl:left-94">
-              <div className="bg-customColors-orange h-8 w-8 lg:h-16 lg:w-16 rounded-full p-2 lg:p-4 backdrop-blur-3xl backdrop-filter shadow-xl drop-shadow-2xl">
+            <div className="absolute -bottom-1 right-30 md:right-10  lg:right-48 xl:left-94">
+              <div className="bg-customColors-orange h-8 w-8 md:h-16 md:w-16 rounded-full p-2 md:p-4 backdrop-blur-3xl backdrop-filter shadow-xl drop-shadow-2xl">
                 <Image
                   src="/icons/userIcon.svg"
                   alt="User icon"
                   width={32}
                   height={32}
-                  className="text-customColors-white w-4 h-4 lg:h-8 lg:w-8"
+                  className="text-customColors-white w-4 h-4 md:h-8 md:w-8"
                 />
               </div>
             </div>

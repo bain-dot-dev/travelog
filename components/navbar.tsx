@@ -151,13 +151,13 @@ export function Navbar() {
       <div className="hidden xl:flex items-center gap-8 xl:gap-16">
         <NavLinks />
       </div>
-      <div className="flex items-center gap-2 lg:gap-4">
+      <div className="flex items-center gap-2 lg:gap-4 xl:hidden">
         <Image
           src="/icons/travelogIcon.svg"
           alt="Travlog logo"
           width={40}
           height={40}
-          className="rounded-lg w-8 h-8 lg:w-10 lg:h-10 block xl:hidden"
+          className="rounded-lg w-8 h-8 lg:w-10 lg:h-10 "
         />
         <span className="text-lg lg:text-2xl font-black leading-10 block xl:hidden">
           Travlog

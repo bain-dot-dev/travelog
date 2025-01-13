@@ -55,13 +55,13 @@ export default function Features() {
 
           <div className="relative mx-auto ">
             <div className="relative xl:w-[670px] xl:mt-20 xl:px-0 lg:px-24 px-0 overflow-hidden">
-              <div className="relative w-[350px] h-[439px] lg:w-[693px] lg:h-[869px] xl:w-[688px] ">
+              <div className="relative w-[350px] h-[439px] md:w-[493px] md:h-[696px] lg:w-[693px] lg:h-[869px] xl:w-[688px] ">
                 <Image
                   src="/image/paradiseOnEarth.png"
                   alt="Black church in field"
                   width={700}
                   height={870}
-                  className="w-[350px] h-[439px] lg:w-[693px] lg:h-[869px] xl:w-[693px] xl:h-[869px] "
+                  className="w-[350px] h-[439px] md:w-[493px] lg:w-[693px] md:h-[696px] lg:h-[869px] xl:w-[693px] xl:h-[869px] "
                 />
               </div>
             </div>
