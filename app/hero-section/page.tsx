@@ -110,7 +110,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <div className="relative w-[220px] lg:w-[400px] xl:w-[500px] -mt-41 md:mt-26 lg:mt-40 xl:mt-28 left-18 md:left-16 lg:-left-2 xl:-left-34">
+              <div className="relative w-[220px] lg:w-[400px] xl:w-[500px] -mt-41 md:mt-26 lg:mt-38 xl:mt-28 left-18 md:left-16 lg:-left-2 xl:-left-34">
                 <div className="relative w-[139px] h-[205px] md:w-[272px] md:h-[400px] mx-auto">
                   <Image
                     src="/image/cityView.png"
