@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ServiceCard } from "../../components/service-card";
+import { ServiceCard } from "./service-card";
 
 const services = [
   {

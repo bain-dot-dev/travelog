@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card, CardContent } from "../../components/ui/card";
+import { Card, CardContent } from "./ui/card";
 
 const stats = [
   { value: "500+", label: "Holiday Package" },

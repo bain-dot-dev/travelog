@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Button } from "../../components/ui/button";
+import { Button } from "./ui/button";
 
 interface Testimonial {
   name: string;

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { DestinationCard } from "../../components/destination-card";
-import { Button } from "../../components/ui/button";
+import { DestinationCard } from "./destination-card";
+import { Button } from "./ui/button";
 import Image from "next/image";
 
 const destinations = [

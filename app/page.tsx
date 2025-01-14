@@ -1,12 +1,12 @@
-import HeroSection from "@/app/hero-section/page";
-import PartnerLogos from "@/app/partner-logos/page";
-import Services from "@/app//services/page";
-import Destinations from "@/app/destinations/page";
-import TravelPoint from "@/app/travel-point/page";
-import Features from "@/app/features/page";
-import TestimonialsSection from "@/app//testimonials/page";
-import Newsletter from "@/app/newsletter/page";
-import Footer from "@/app/footer/page";
+import HeroSection from "@/components/hero-section";
+import PartnerLogos from "@/components/partner-logos";
+import Services from "@/components/services";
+import Destinations from "@/components/destinations";
+import TravelPoint from "@/components/travel-point";
+import Features from "@/components/features";
+import TestimonialsSection from "@/components/testimonials";
+import Newsletter from "@/components/newsletter";
+import Footer from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 
 export default function Home() {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FeatureItem } from "../../components/feature-item";
+import { FeatureItem } from "./feature-item";
 
 const features = [
   {
